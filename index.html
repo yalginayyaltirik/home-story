@@ -11,7 +11,6 @@
             --accent: #c2a35d;  
             --white: #ffffff;
             --whatsapp: #25d366;
-            --section-bg: #fdfdfd;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,11 +22,11 @@
             line-height: 1.6;
         }
 
-        /* --- NEW MODERN HEADER --- */
+        /* --- HERO SECTION --- */
         .hero-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            min-height: 80vh;
+            min-height: 85vh;
             background: var(--primary);
             color: var(--white);
             overflow: hidden;
@@ -37,14 +36,23 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 10% 12%;
+            padding: 8% 10%;
             background: linear-gradient(135deg, #162447 0%, #0f172a 100%);
         }
 
-        .logo-top {
-            width: 140px;
+        /* Bug Fix 1: Logo Container */
+        .logo-container {
+            width: 160px;
+            height: auto;
             margin-bottom: 2rem;
-            filter: brightness(0) invert(1); /* Makes logo white if it's dark */
+        }
+
+        .logo-top {
+            width: 100%;
+            height: auto;
+            display: block;
+            /* If your logo has a dark background, this filter makes it white/visible */
+            filter: brightness(0) invert(1); 
         }
 
         .hero-text h1 {
@@ -54,11 +62,12 @@
             margin-bottom: 1.5rem;
         }
 
-        .hero-text p {
-            font-size: 1.2rem;
-            color: #cbd5e1;
-            margin-bottom: 2rem;
-            font-weight: 300;
+        .tagline-top {
+            color: var(--accent);
+            letter-spacing: 2px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
         }
 
         .hero-image {
@@ -70,13 +79,13 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(to right, var(--primary), transparent 30%);
+            background: linear-gradient(to right, var(--primary), transparent 40%);
         }
 
-        /* --- THE "DOWNSIDE" DESIGN (PRESERVED) --- */
+        /* --- DOWNSIDE DETAILS --- */
         .details-container {
-            max-width: 1200px;
-            margin: -60px auto 0; /* Overlaps header slightly for modern look */
+            max-width: 1100px;
+            margin: -80px auto 0;
             position: relative;
             z-index: 10;
             padding: 0 20px 80px;
@@ -84,76 +93,79 @@
 
         .grid-card {
             background: var(--white);
-            border-radius: 24px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
             display: grid;
             grid-template-columns: 1fr 1fr;
             overflow: hidden;
         }
 
         .bio-section {
-            padding: 4rem;
-            border-right: 1px solid #f1f5f9;
+            padding: 3.5rem;
+            background: var(--white);
         }
 
         .bio-section h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 0.5rem;
         }
 
-        .bio-section .title {
+        .bio-section .title-label {
             color: var(--accent);
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 0.9rem;
             display: block;
             margin-bottom: 1.5rem;
         }
 
-        .contact-map-section {
-            background: #fafbfc;
-            padding: 0;
+        .contact-map-side {
             display: flex;
             flex-direction: column;
+            background: var(--primary);
         }
 
-        .contact-info {
-            padding: 3rem 4rem;
-            background: var(--primary);
+        .contact-info-box {
+            padding: 3rem;
             color: var(--white);
         }
 
         .contact-item label {
             display: block;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: var(--accent);
             text-transform: uppercase;
-            margin-bottom: 0.3rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.2rem;
         }
 
-        .contact-item p { margin-bottom: 1rem; font-size: 1.1rem; }
+        .contact-item p { margin-bottom: 1.2rem; font-size: 1rem; font-weight: 300; }
 
+        /* Bug Fix 2: Map Wrapper without API key requirements */
         .map-wrapper {
             flex-grow: 1;
-            height: 350px;
+            min-height: 300px;
+            background: #e5e7eb;
         }
 
-        /* WhatsApp Button */
         .whatsapp-float {
             position: fixed; bottom: 30px; right: 30px; background-color: var(--whatsapp); color: white;
-            padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 600;
-            display: flex; align-items: center; gap: 12px; z-index: 1000; transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            padding: 12px 24px; border-radius: 50px; text-decoration: none; font-weight: 600;
+            display: flex; align-items: center; gap: 10px; z-index: 1000; transition: transform 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
-        footer { text-align: center; padding: 4rem; color: #94a3b8; font-size: 0.9rem; }
+        .whatsapp-float:hover { transform: translateY(-5px); }
 
-        @media (max-width: 1024px) {
+        footer { text-align: center; padding: 2rem; color: #94a3b8; font-size: 0.8rem; }
+
+        @media (max-width: 900px) {
             .hero-section, .grid-card { grid-template-columns: 1fr; }
-            .hero-image { height: 400px; order: -1; }
-            .hero-image::after { background: linear-gradient(to top, var(--primary), transparent 30%); }
-            .bio-section, .contact-info { padding: 2.5rem; }
+            .hero-image { height: 350px; order: -1; }
+            .hero-image::after { background: linear-gradient(to top, var(--primary), transparent 40%); }
+            .details-container { margin-top: -40px; }
+            .bio-section, .contact-info-box { padding: 2rem; }
         }
     </style>
 </head>
@@ -161,10 +173,13 @@
 
     <header class="hero-section">
         <div class="hero-text">
-            <img src="foto4.jpeg" alt="Logo" class="logo-top">
-            <p style="color: var(--accent); letter-spacing: 2px; font-weight: 600;">YENİ BİR OLUŞUM, YENİ BİR BAKIŞ AÇISI</p>
-            <h1>Home Story<br>Gayrimenkul</h1>
-            <p>Emlak sektöründe yenilikçi ve güvenilir bir yaklaşım benimseyerek yola çıktık. Dinamik ekibimizle özelleştirilmiş çözümler sunuyoruz.</p>
+            <div class="logo-container">
+                <img src="foto4.jpeg" alt="Home Story Logo" class="logo-top">
+            </div>
+            
+            <p class="tagline-top">YENİ BİR OLUŞUM, YENİ BİR BAKIŞ AÇISI</p>
+            <h1>Home Story Gayrimenkul</h1>
+            <p>Emlak sektöründe yenilikçi ve güvenilir bir yaklaşım benimseyerek yola çıktık. Dinamik ekibimizle size özel çözümler sunuyoruz.</p>
         </div>
         <div class="hero-image"></div>
     </header>
@@ -173,41 +188,47 @@
         <div class="grid-card">
             <div class="bio-section">
                 <h2>Ersun Baysungur</h2>
-                <span class="title">Gayrimenkul Danışmanı</span>
-                <p style="color: #475569; font-size: 1.1rem;">
+                <span class="title-label">Gayrimenkul Danışmanı</span>
+                <p style="color: #475569;">
                     Müşteri memnuniyetini ve uzun vadeli güven ilişkilerini merkeze alan bir anlayışla profesyonel çözümler sunmaktadır. Her hikayenin bir evle başladığına inanıyoruz.
                 </p>
             </div>
 
-            <div class="contact-map-section">
-                <div class="contact-info">
+            <div class="contact-map-side">
+                <div class="contact-info-box">
                     <div class="contact-item">
-                        <label>Mobil Hattımız</label>
+                        <label>MOBİL HATTIMIZ</label>
                         <p>0552 532 84 00</p>
                     </div>
                     <div class="contact-item">
-                        <label>Ofis Adresi</label>
+                        <label>OFİS ADRESİ</label>
                         <p>Alacaatlı Mah. Kanuni Sultan Blv. No: 160 D:50 Tona Rezidans, Çankaya / Ankara</p>
                     </div>
                 </div>
+                
                 <div class="map-wrapper">
                     <iframe 
-                        width="100%" height="100%" frameborder="0" style="border:0"
-                        src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=Tona+Rezidans+Alacaatlı" 
-                        allowfullscreen>
+                        width="100%" 
+                        height="100%" 
+                        style="border:0" 
+                        loading="lazy" 
+                        allowfullscreen 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3061.328325145781!2d32.68412037657271!3d39.88934508754124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d339343f752e5d%3A0xc6657e089d81d60c!2sTona%20Rezidans!5e0!3m2!1str!2str!4v1700000000000">
                     </iframe>
-                    <iframe src="http://googleusercontent.com/maps.google.com/7" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
     </main>
 
     <a href="https://wa.me/905525328400" class="whatsapp-float" target="_blank">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.319 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.815-.981z"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.319 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.815-.981z"/></svg>
         WhatsApp'tan Yazın
     </a>
 
-    <footer>© 2026 Home Story Gayrimenkul. Tüm hakları saklıdır.</footer>
+    <footer>
+        © 2026 Home Story Gayrimenkul.
+    </footer>
 
 </body>
 </html>
