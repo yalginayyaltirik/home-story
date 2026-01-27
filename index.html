@@ -101,6 +101,7 @@
       color: var(--white);
       padding: 2.5rem;
       border-radius: 20px;
+      margin-bottom: 2rem;
     }
 
     .contact div {
@@ -121,17 +122,12 @@
       font-weight: 300;
     }
 
-    /* FULL WIDTH MAP */
-    .full-map {
-      width: 100%;
-      height: 420px;
-      border-top: 1px solid #e5e7eb;
-    }
-
-    .full-map iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
+    /* MAP */
+    .map-wrapper {
+      height: 300px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
     }
 
     /* WHATSAPP */
@@ -220,18 +216,20 @@
         </div>
       </div>
 
+      <!-- MAP -->
+      <div class="map-wrapper">
+        <iframe
+          width="100%"
+          height="100%"
+          frameborder="0"
+          scrolling="no"
+          src="https://maps.google.com/maps?q=Alacaatlı%20Mah.%20Kanuni%20Sultan%20Blv.%20No:%20160%20D:50%20Tona%20Rezidans&t=&z=15&ie=UTF8&iwloc=&output=embed">
+        </iframe>
+      </div>
+
     </div>
   </div>
 </main>
-
-<!-- FULL WIDTH GOOGLE MAP -->
-<section class="full-map">
-  <iframe
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-    src="https://maps.google.com/maps?q=Alacaatlı%20Mah.%20Kanuni%20Sultan%20Blv.%20No:%20160%20D:50%20Tona%20Rezidans&t=&z=15&ie=UTF8&iwloc=&output=embed">
-  </iframe>
-</section>
 
 <a href="https://wa.me/905525328400" class="whatsapp-float" target="_blank">
   WhatsApp’tan Yazın
