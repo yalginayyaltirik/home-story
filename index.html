@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
@@ -11,7 +11,7 @@
     :root {
       --primary: #0f172a;
       --accent: #c2a35d;
-      --bg: #f8fafc;
+      --bg: #ffffff; /* Changed to white to match screenshot */
       --white: #ffffff;
       --whatsapp: #25d366;
     }
@@ -22,154 +22,143 @@
       font-family: 'Plus Jakarta Sans', sans-serif;
       background: var(--bg);
       color: var(--primary);
+      line-height: 1.6;
     }
 
-    /* HEADER */
+    /* HEADER - Simplified for alignment */
     header {
       background: var(--white);
-      border-bottom: 1px solid #e5e7eb;
-      padding: 1.5rem 2rem;
+      padding: 2rem 5% 1rem 5%;
     }
 
     .header-inner {
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+      gap: 1rem;
     }
 
-    .logo {
-      height: 70px;
-      border-radius: 10px;
-    }
+    .logo { height: 60px; }
 
     .company h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 2rem;
+      font-size: 1.8rem;
+      letter-spacing: -0.5px;
     }
 
     .company span {
       color: var(--accent);
-      font-size: 0.9rem;
-      letter-spacing: 1.5px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 1px;
       text-transform: uppercase;
+      display: block;
+      margin-top: -4px;
     }
 
-    /* MAIN */
+    /* MAIN LAYOUT */
     .container {
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 4rem 2rem;
+      padding: 2rem 5%;
     }
 
     .profile-grid {
       display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 4rem;
-      align-items: center;
+      grid-template-columns: 0.8fr 1.2fr; /* Adjusted ratio */
+      gap: 3rem;
+      align-items: start; /* Align to top to match photo layout */
     }
 
     .profile-photo img {
       width: 100%;
-      border-radius: 24px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      max-width: 500px;
+      border-radius: 20px;
+      display: block;
     }
+
+    /* INFO SECTION */
+    .info { padding-top: 1rem; }
 
     .info h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+      font-size: 3rem;
+      margin-bottom: 0.2rem;
     }
 
     .info .title {
       color: var(--accent);
+      font-size: 0.9rem;
       font-weight: 600;
       margin-bottom: 2rem;
       display: block;
     }
 
-    .info p {
-      font-size: 1.1rem;
-      color: #475569;
-      margin-bottom: 2.5rem;
-      line-height: 1.7;
-    }
-
-    .contact {
-      background: var(--primary);
-      color: var(--white);
-      padding: 2.5rem;
-      border-radius: 20px;
+    .info .bio {
+      font-size: 1rem;
+      color: #334155;
       margin-bottom: 2rem;
+      max-width: 500px;
     }
 
-    .contact div {
+    .contact-card {
+      background: #0a1120; /* Darker navy from image */
+      color: var(--white);
+      padding: 2rem;
+      border-radius: 24px;
       margin-bottom: 1.5rem;
+      max-width: 550px;
     }
 
-    .contact label {
+    .contact-card .item { margin-bottom: 1.5rem; }
+    .contact-card .item:last-child { margin-bottom: 0; }
+
+    .contact-card label {
       display: block;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
       color: var(--accent);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.5rem;
     }
 
-    .contact span {
+    .contact-card span {
       font-size: 1.1rem;
-      font-weight: 300;
+      font-weight: 400;
     }
 
-    /* MAP */
-    .map-wrapper {
-      height: 300px;
-      border-radius: 20px;
+    /* MAP SNEAK PEEK */
+    .map-preview {
+      max-width: 550px;
+      height: 120px;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+      border: 1px solid #e2e8f0;
+      position: relative;
     }
 
-    /* WHATSAPP */
-    .whatsapp-float {
+    /* WHATSAPP BUTTON - Matches the green pill in screenshot */
+    .whatsapp-btn {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
+      bottom: 20px;
+      right: 20px;
       background: var(--whatsapp);
       color: white;
-      padding: 14px 28px;
-      border-radius: 50px;
+      padding: 12px 24px;
+      border-radius: 30px;
       text-decoration: none;
       font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 15px 30px rgba(37, 211, 102, 0.35);
-      z-index: 1000;
-      transition: transform 0.3s ease;
-    }
-
-    .whatsapp-float:hover {
-      transform: translateY(-5px);
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.85rem;
-      color: #94a3b8;
-      border-top: 1px solid #e5e7eb;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      z-index: 100;
     }
 
     @media (max-width: 900px) {
-      .profile-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-      .header-inner {
-        flex-direction: column;
-        text-align: center;
-      }
+      .profile-grid { grid-template-columns: 1fr; text-align: center; }
+      .profile-photo img { margin: 0 auto; }
+      .info .bio, .contact-card, .map-preview { margin-left: auto; margin-right: auto; }
+      .info h2 { font-size: 2.2rem; }
     }
   </style>
 </head>
@@ -178,17 +167,16 @@
 
 <header>
   <div class="header-inner">
-    <img src="foto4.jpeg" alt="Home Story Gayrimenkul Logo" class="logo">
+    <img src="foto4.jpeg" alt="Logo" class="logo">
     <div class="company">
       <h1>Home Story Gayrimenkul</h1>
-      <span>Yeni bir oluşum, yeni bir bakış açısı</span>
+      <span>YENİ BİR OLUŞUM, YENİ BİR BAKIŞ AÇISI</span>
     </div>
   </div>
 </header>
 
 <main class="container">
   <div class="profile-grid">
-
     <div class="profile-photo">
       <img src="foto3.jpeg" alt="Ersun Baysungur">
     </div>
@@ -197,18 +185,18 @@
       <h2>Ersun Baysungur</h2>
       <span class="title">Gayrimenkul Danışmanı</span>
 
-      <p>
+      <p class="bio">
         Müşteri memnuniyetini ve uzun vadeli güven ilişkilerini merkeze alan bir anlayışla
         profesyonel çözümler sunmaktadır.
       </p>
 
-      <div class="contact">
-        <div>
+      <div class="contact-card">
+        <div class="item">
           <label>GSM</label>
           <span>0552 532 84 00</span>
         </div>
-        <div>
-          <label>Adres</label>
+        <div class="item">
+          <label>ADRES</label>
           <span>
             Alacaatlı Mah. Kanuni Sultan Blv. No: 160 D:50<br>
             Tona Rezidans, Çankaya / Ankara
@@ -216,28 +204,23 @@
         </div>
       </div>
 
-      <!-- MAP -->
-      <div class="map-wrapper">
+      <div class="map-preview">
         <iframe
           width="100%"
           height="100%"
-          frameborder="0"
-          scrolling="no"
-          src="https://maps.google.com/maps?q=Alacaatlı%20Mah.%20Kanuni%20Sultan%20Blv.%20No:%20160%20D:50%20Tona%20Rezidans&t=&z=15&ie=UTF8&iwloc=&output=embed">
+          style="border:0;"
+          loading="lazy"
+          allowfullscreen
+          src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=Tona+Rezidans+Ankara">
         </iframe>
       </div>
-
     </div>
   </div>
 </main>
 
-<a href="https://wa.me/905525328400" class="whatsapp-float" target="_blank">
+<a href="https://wa.me/905525328400" class="whatsapp-btn" target="_blank">
   WhatsApp’tan Yazın
 </a>
-
-<footer>
-  © 2026 Home Story Gayrimenkul
-</footer>
 
 </body>
 </html>
