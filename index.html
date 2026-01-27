@@ -14,11 +14,7 @@
             --whatsapp: #25d366;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -27,15 +23,11 @@
             line-height: 1.6;
         }
 
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), 
                         url('foto1.jpeg') center/cover no-repeat fixed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
+            display: flex; align-items: center; justify-content: center; padding: 40px 20px;
         }
 
         .glass-card {
@@ -48,97 +40,27 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
 
-        .logo-img {
-            height: 90px;
-            margin-bottom: 1.5rem;
-            border-radius: 12px;
-        }
+        .logo-img { height: 90px; margin-bottom: 1.5rem; border-radius: 12px; }
 
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.2rem, 6vw, 3.8rem);
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
+        h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 6vw, 3.8rem); margin-bottom: 1rem; }
 
-        .tagline {
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            margin-bottom: 2rem;
-            display: block;
-        }
+        .tagline { color: var(--accent); text-transform: uppercase; letter-spacing: 3px; font-weight: 600; font-size: 0.85rem; margin-bottom: 2rem; display: block; }
 
-        /* Content Sections */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 6rem 2rem;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 6rem 2rem; }
 
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
 
-        .agent-card h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            margin-bottom: 0.5rem;
-        }
+        .agent-card h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 0.5rem; }
 
-        .agent-title {
-            color: var(--accent);
-            font-weight: 600;
-            display: block;
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
+        .agent-title { color: var(--accent); font-weight: 600; display: block; margin-bottom: 2rem; font-size: 1.1rem; }
 
-        .description-text {
-            color: #475569;
-            font-size: 1.15rem;
-            margin-bottom: 2rem;
-        }
+        .contact-box { background: var(--primary); color: var(--white); padding: 3rem; border-radius: 24px; }
 
-        /* Contact Details */
-        .contact-box {
-            background: var(--primary);
-            color: var(--white);
-            padding: 3rem;
-            border-radius: 24px;
-        }
+        .contact-item { margin-bottom: 2rem; }
+        .contact-item label { display: block; font-size: 0.75rem; text-transform: uppercase; color: var(--accent); letter-spacing: 2px; margin-bottom: 0.5rem; font-weight: 600; }
+        .contact-item p { font-size: 1.2rem; font-weight: 300; }
 
-        .contact-item {
-            margin-bottom: 2rem;
-        }
-
-        .contact-item:last-child { margin-bottom: 0; }
-
-        .contact-item label {
-            display: block;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            color: var(--accent);
-            letter-spacing: 2px;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .contact-item p {
-            font-size: 1.2rem;
-            font-weight: 300;
-        }
-
-        /* Map Section */
-        .map-section {
-            grid-column: span 2;
-            margin-top: 2rem;
-        }
+        .map-section { grid-column: span 2; margin-top: 2rem; }
 
         .map-wrapper {
             height: 500px;
@@ -148,42 +70,20 @@
             border: 1px solid #e2e8f0;
         }
 
-        /* WhatsApp Floating Button */
         .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: var(--whatsapp);
-            color: white;
-            padding: 14px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-            z-index: 1000;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: fixed; bottom: 30px; right: 30px; background-color: var(--whatsapp); color: white;
+            padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 600;
+            display: flex; align-items: center; gap: 12px; z-index: 1000; transition: all 0.4s ease;
         }
 
-        .whatsapp-float:hover {
-            transform: translateY(-5px) scale(1.05);
-        }
+        .whatsapp-float:hover { transform: translateY(-5px); }
 
-        footer {
-            text-align: center;
-            padding: 4rem 2rem;
-            color: #94a3b8;
-            font-size: 0.9rem;
-            border-top: 1px solid #e2e8f0;
-        }
+        footer { text-align: center; padding: 4rem 2rem; color: #94a3b8; font-size: 0.9rem; border-top: 1px solid #e2e8f0; }
 
         @media (max-width: 900px) {
-            .grid { grid-template-columns: 1fr; gap: 3rem; }
+            .grid { grid-template-columns: 1fr; }
             .map-section { grid-column: span 1; }
             .map-wrapper { height: 350px; }
-            .hero { padding: 80px 20px; }
         }
     </style>
 </head>
@@ -191,16 +91,13 @@
 
     <section class="hero">
         <div class="glass-card">
-            <img src="foto1.jpeg" alt="Home Story Logo" class="logo-img">
+            <img src="foto1.jpeg" alt="Logo" class="logo-img">
             <span class="tagline">Yeni bir oluşum, yeni bir bakış açısı</span>
             <h1>Home Story Gayrimenkul</h1>
-            <p class="description-text">
+            <p style="color: #475569; font-size: 1.15rem; margin-bottom: 2rem;">
                 Emlak sektöründe yenilikçi ve güvenilir bir yaklaşım benimseyerek yola çıktık. 
-                Sürekli öğrenen dinamik bir ekip olarak her müşterimize özelleştirilmiş çözümler sunmayı hedefliyoruz.
             </p>
-            <div style="font-style: italic; color: var(--accent); font-weight: 500; font-size: 1.1rem;">
-                “Güven, vizyon ve modern gayrimenkul anlayışı.”
-            </div>
+            <div style="font-style: italic; color: var(--accent); font-weight: 500;">“Güven, vizyon ve modern gayrimenkul anlayışı.”</div>
         </div>
     </section>
 
@@ -209,48 +106,44 @@
             <div class="agent-card">
                 <h2>Ersun Baysungur</h2>
                 <span class="agent-title">Gayrimenkul Danışmanı</span>
-                <p class="description-text">
-                    Müşteri memnuniyetini ve uzun vadeli güven ilişkilerini merkeze alan bir anlayışla, 
-                    konut ve yatırım alanlarında profesyonel çözümler sunmaktadır.
+                <p style="color: #475569; font-size: 1.15rem;">
+                    Müşteri memnuniyetini ve uzun vadeli güven ilişkilerini merkeze alan bir anlayışla profesyonel çözümler sunmaktadır.
                 </p>
             </div>
 
             <div class="contact-box">
                 <div class="contact-item">
-                    <label>Ofis Telefonu</label>
-                    <p>0312 504 74 04</p>
-                </div>
-                <div class="contact-item">
-                    <label>Mobil Hattımız</label>
+                    <label>GSM</label>
                     <p>0552 532 84 00</p>
                 </div>
                 <div class="contact-item">
-                    <label>Adresimiz</label>
-                    <p>Alacaatlı Mah. Kanuni Sultan Blv. No: 160 D:50<br>Tona Rezidans, Çankaya / Ankara</p>
+                    <label>Adres</label>
+                    <p>Alacaatlı Mah. Kanuni Sultan Blv. No: 160 D:50 Tona Rezidans, Çankaya/Ankara</p>
                 </div>
             </div>
 
             <div class="map-section">
                 <div class="map-wrapper">
                     <iframe 
-                        src="http://googleusercontent.com/maps.google.com/4" 
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                        width="100%" 
+                        height="100%" 
+                        frameborder="0" 
+                        scrolling="no" 
+                        marginheight="0" 
+                        marginwidth="0" 
+                        src="https://maps.google.com/maps?q=Alacaatlı%20Mah.%20Kanuni%20Sultan%20Blv.%20No:%20160%20D:50%20Tona%20Rezidans&t=&z=15&ie=UTF8&iwloc=&output=embed">
                     </iframe>
                 </div>
             </div>
         </div>
     </div>
 
-    <a href="https://wa.me/905525328400?text=Merhaba,%20web%20sitenizden%20ulaşıyorum.%20Gayrimenkul%20danışmanlığı%20için%20bilgi%20alabilir%20miyim?" class="whatsapp-float" target="_blank">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.319 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.815-.981z"/>
-        </svg>
+    <a href="https://wa.me/905525328400" class="whatsapp-float" target="_blank">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.319 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.815-.981z"/></svg>
         WhatsApp'tan Yazın
     </a>
 
-    <footer>
-        © 2026 Home Story Gayrimenkul. Tüm hakları saklıdır.
-    </footer>
+    <footer>© 2026 Home Story Gayrimenkul</footer>
 
 </body>
 </html>
