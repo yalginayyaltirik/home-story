@@ -1,231 +1,199 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Story Gayrimenkul | Ersun Baysungur</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #0f172a; 
-            --accent: #c2a35d;  
-            --white: #ffffff;
-            --whatsapp: #25d366;
-            --bg-soft: #f1f5f9;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home Story Gayrimenkul | Ersun Baysungur</title>
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--white);
-            color: var(--primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+  <style>
+    :root {
+      --primary: #0f172a;
+      --accent: #c2a35d;
+      --bg: #f8fafc;
+      --white: #ffffff;
+    }
 
-        /* HERO */
-        .hero {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            min-height: 90vh;
-            background: var(--primary);
-            color: var(--white);
-        }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        .hero-content {
-            padding: 8% 12%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background: linear-gradient(135deg, #131c31 0%, #0f172a 100%);
-        }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--primary);
+    }
 
-        .main-logo { width: 180px; margin-bottom: 2.5rem; filter: brightness(0) invert(1); }
+    /* HEADER */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid #e5e7eb;
+      padding: 1.5rem 2rem;
+    }
 
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.8rem, 6vw, 4.5rem);
-            line-height: 1.1;
-            margin-bottom: 2rem;
-        }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
 
-        .hero-content p {
-            font-size: 1.25rem;
-            color: #94a3b8;
-            max-width: 500px;
-            margin-bottom: 2rem;
-        }
+    .logo {
+      height: 70px;
+      border-radius: 10px;
+    }
 
-        .hero-image {
-            background: url('foto3.jpeg') center/cover no-repeat;
-        }
+    .company h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+    }
 
-        /* OFFICE */
-        .office-section {
-            padding: 100px 5%;
-            background: var(--bg-soft);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
+    .company span {
+      color: var(--accent);
+      font-size: 0.9rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
 
-        .office-img {
-            width: 100%;
-            height: 500px;
-            background: url('foto1.jpeg') center/cover no-repeat;
-            border-radius: 30px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
-        }
+    /* MAIN SECTION */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
 
-        .office-text h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      align-items: center;
+    }
 
-        .accent-bar {
-            width: 60px;
-            height: 4px;
-            background: var(--accent);
-            margin-bottom: 1.5rem;
-        }
+    .profile-photo img {
+      width: 100%;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
 
-        /* DETAILS */
-        .details-wrapper {
-            max-width: 1300px;
-            margin: -100px auto 100px;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 30px;
-        }
+    .info h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
 
-        .card {
-            background: var(--white);
-            border-radius: 24px;
-            padding: 4rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-        }
+    .info .title {
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 2rem;
+      display: block;
+    }
 
-        .bio-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-        }
+    .info p {
+      font-size: 1.1rem;
+      color: #475569;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
 
-        .agent-label {
-            color: var(--accent);
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            display: block;
-            margin-bottom: 2rem;
-        }
+    .contact {
+      background: var(--primary);
+      color: var(--white);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
 
-        .contact-map-card {
-            background: var(--primary);
-            color: var(--white);
-            padding: 0;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
+    .contact div {
+      margin-bottom: 1.5rem;
+    }
 
-        .contact-header { padding: 4rem; }
+    .contact label {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
 
-        .contact-item { margin-bottom: 1.5rem; }
-        .contact-item span { color: var(--accent); font-size: 0.75rem; text-transform: uppercase; display: block; }
-        .contact-item p { font-size: 1.2rem; font-weight: 300; }
+    .contact span {
+      font-size: 1.1rem;
+      font-weight: 300;
+    }
 
-        .map-container {
-            height: 400px;
-            width: 100%;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      border-top: 1px solid #e5e7eb;
+    }
 
-        /* WHATSAPP */
-        .whatsapp-float {
-            position: fixed; bottom: 40px; right: 40px; 
-            background: var(--whatsapp); color: white;
-            padding: 15px 30px; border-radius: 60px;
-            text-decoration: none; font-weight: 600;
-            display: flex; align-items: center; gap: 12px;
-            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
-            z-index: 9999;
-        }
-
-        footer {
-            text-align: center;
-            padding: 50px;
-            color: #64748b;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 1024px) {
-            .hero, .office-section, .details-wrapper { grid-template-columns: 1fr; }
-            .hero-image { height: 400px; order: -1; }
-            .details-wrapper { margin-top: 40px; }
-            .office-img { height: 350px; }
-        }
-    </style>
+    @media (max-width: 900px) {
+      .profile-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      header {
+        text-align: center;
+      }
+      .header-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header class="hero">
-    <div class="hero-content">
-        <img src="foto4.jpeg" alt="Logo" class="main-logo">
-        <p style="color: var(--accent); font-weight: 600; letter-spacing: 2px;">EST. 2026</p>
-        <h1>Yeni Bir Oluşum,<br>Yeni Bir Bakış Açısı.</h1>
-        <p>Emlak sektöründe yenilikçi ve güvenilir bir yaklaşım benimseyerek yola çıktık. Geleceğin yaşam alanlarını bugün tasarlıyoruz.</p>
+<header>
+  <div class="header-inner">
+    <img src="foto4.jpeg" alt="Home Story Gayrimenkul Logo" class="logo">
+    <div class="company">
+      <h1>Home Story Gayrimenkul</h1>
+      <span>Yeni bir oluşum, yeni bir bakış açısı</span>
     </div>
-    <div class="hero-image"></div>
+  </div>
 </header>
 
-<section class="office-section">
-    <div class="office-img"></div>
-    <div class="office-text">
-        <div class="accent-bar"></div>
-        <h2>Modern Ofisimiz & Vizyonumuz</h2>
-        <p style="color: #475569; font-size: 1.1rem; margin-bottom: 1.5rem;">
-            Sürekli öğrenen dinamik bir ekip olarak, her müşterimize özelleştirilmiş çözümler sunmayı hedefliyoruz.
-        </p>
-        <p style="font-style: italic; color: var(--primary); font-weight: 600;">“Güven, vizyon ve modern gayrimenkul anlayışı.”</p>
-    </div>
-</section>
+<main class="container">
+  <div class="profile-grid">
 
-<main class="details-wrapper">
-    <div class="card bio-card">
-        <span class="agent-label">Gayrimenkul Danışmanı</span>
-        <h3>Ersun Baysungur</h3>
-        <p style="color: #64748b; font-size: 1.15rem;">
-            Müşteri memnuniyetini ve uzun vadeli güven ilişkilerini merkeze alan profesyonel danışmanlık.
-        </p>
+    <!-- LEFT: PHOTO -->
+    <div class="profile-photo">
+      <img src="foto3.jpeg" alt="Ersun Baysungur">
     </div>
 
-    <div class="card contact-map-card">
-        <div class="contact-header">
-            <div class="contact-item">
-                <span>Mobil</span>
-                <p>0552 532 84 00</p>
-            </div>
-            <div class="contact-item">
-                <span>Adres</span>
-                <p>Alacaatlı Mah. Kanuni Sultan Blv. No:160 D:50 Tona Rezidans</p>
-            </div>
+    <!-- RIGHT: INFO -->
+    <div class="info">
+      <h2>Ersun Baysungur</h2>
+      <span class="title">Gayrimenkul Danışmanı</span>
+
+      <p>
+        Müşteri memnuniyetini ve uzun vadeli güven ilişkilerini merkeze alan bir anlayışla
+        profesyonel çözümler sunmaktadır.
+      </p>
+
+      <div class="contact">
+        <div>
+          <label>GSM</label>
+          <span>0552 532 84 00</span>
         </div>
-        <div class="map-container">
-            <iframe width="100%" height="100%" frameborder="0" scrolling="no"
-                src="https://maps.google.com/maps?q=Alacaatlı%20Mah.%20Kanuni%20Sultan%20Blv.%20No:%20160%20D:50%20Tona%20Rezidans&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+        <div>
+          <label>Adres</label>
+          <span>
+            Alacaatlı Mah. Kanuni Sultan Blv. No: 160 D:50<br>
+            Tona Rezidans, Çankaya / Ankara
+          </span>
         </div>
+      </div>
     </div>
+
+  </div>
 </main>
 
-<a href="https://wa.me/905525328400" class="whatsapp-float" target="_blank">WhatsApp'tan Yazın</a>
-
-<footer>© 2026 Home Story Gayrimenkul. Tüm hakları saklıdır.</footer>
+<footer>
+  © 2026 Home Story Gayrimenkul
+</footer>
 
 </body>
 </html>
