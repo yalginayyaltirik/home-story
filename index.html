@@ -1,192 +1,58 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Story Gayrimenkul | Ersun Baysungur</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #0f172a; /* Deep Slate */
-            --accent: #c2a35d;  /* Muted Gold */
-            --bg-light: #f8fafc;
-            --white: #ffffff;
+<style>
+    /* WhatsApp Floating Button */
+    .whatsapp-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25d366;
+        color: white;
+        padding: 15px 25px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        z-index: 1000;
+        transition: transform 0.3s ease;
+    }
+
+    .whatsapp-btn:hover {
+        transform: scale(1.05);
+        background-color: #20ba5a;
+    }
+
+    /* Map Styling */
+    .map-container {
+        grid-column: span 2; /* Spans full width on desktop */
+        border-radius: 20px;
+        overflow: hidden;
+        height: 400px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 768px) {
+        .map-container {
+            grid-column: span 1;
+            height: 300px;
         }
+    }
+</style>
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<div class="map-container">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3061.3533967838563!2d32.65152867654318!3d39.88871638761159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d339396265089f%3A0xc6657c917950c660!2sTona%20Yap%C4%B1%20-%20Tona%20Rezidans!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str" 
+        width="100%" 
+        height="100%" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--primary);
-            overflow-x: hidden;
-        }
-
-        /* Hero Section with Parallax-like feel */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), 
-                        url('foto1.jpeg') center/cover no-repeat fixed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 3rem;
-            border-radius: 24px;
-            max-width: 800px;
-            text-align: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .logo-img {
-            height: 80px;
-            margin-bottom: 1.5rem;
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .tagline {
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-        }
-
-        .description {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #475569;
-            margin-bottom: 2rem;
-        }
-
-        /* Info Section */
-        .info-section {
-            padding: 5rem 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-
-        .agent-card h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .agent-title {
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-
-        /* Contact Details */
-        .contact-box {
-            background: var(--primary);
-            color: var(--white);
-            padding: 3rem;
-            border-radius: 20px;
-        }
-
-        .contact-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-item label {
-            display: block;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 0.25rem;
-        }
-
-        .contact-item p {
-            font-size: 1.1rem;
-            font-weight: 300;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.8rem;
-            color: #94a3b8;
-        }
-
-        @media (max-width: 768px) {
-            .info-section {
-                grid-template-columns: 1fr;
-                padding: 3rem 1.5rem;
-            }
-            .glass-card {
-                padding: 2rem;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <section class="hero">
-        <div class="glass-card">
-            <img src="foto1.jpeg" alt="Logo" class="logo-img">
-            <p class="tagline">Yeni bir oluşum, yeni bir bakış açısı</p>
-            <h1>Home Story Gayrimenkul</h1>
-            <p class="description">
-                Emlak sektöründe yenilikçi ve güvenilir bir yaklaşım benimseyerek yola çıktık. 
-                Sürekli öğrenen dinamik bir ekip olarak her müşterimize özelleştirilmiş çözümler sunmayı hedefliyoruz.
-            </p>
-            <div style="font-style: italic; color: #64748b;">“Güven, vizyon ve modern gayrimenkul anlayışı.”</div>
-        </div>
-    </section>
-
-    <section class="info-section">
-        <div class="agent-card">
-            <h2>Ersun Baysungur</h2>
-            <span class="agent-title">Gayrimenkul Danışmanı</span>
-            <p class="description">
-                Müşteri memnuniyetini ve uzun vadeli güven ilişkilerini merkeze alan bir anlayışla, 
-                konut ve yatırım alanlarında profesyonel çözümler sunmaktadır.
-            </p>
-        </div>
-
-        <div class="contact-box">
-            <div class="contact-item">
-                <label>Telefon</label>
-                <p>0312 504 74 04</p>
-            </div>
-            <div class="contact-item">
-                <label>GSM</label>
-                <p>0552 532 84 00</p>
-            </div>
-            <div class="contact-item">
-                <label>Adres</label>
-                <p>Alacaatlı Mah. Kanuni Sultan Blv. No: 160 D:50 <br> Tona Rezidans, Çankaya / Ankara</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        © 2026 Home Story Gayrimenkul. Tüm hakları saklıdır.
-    </footer>
-
-</body>
-</html>
+<a href="https://wa.me/905525328400?text=Merhaba,%20gayrimenkul%20danışmanlığı%20hakkında%20bilgi%20almak%20istiyorum." class="whatsapp-btn" target="_blank">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.319 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.815-.981z"/></svg>
+    WhatsApp'tan Yazın
+</a>
