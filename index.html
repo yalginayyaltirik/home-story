@@ -2,154 +2,194 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home Story Gayrimenkul</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home Story Gayrimenkul | Ersun Baysungur</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --primary: #1f3b5c;
-      --secondary: #f5f7fa;
-      --text-dark: #1a1a1a;
-      --text-light: #6b7280;
+      --primary: #0f172a;
+      --accent: #c2a35d;
+      --bg: #f8fafc;
+      --white: #ffffff;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: white;
-      color: var(--text-dark);
-      line-height: 1.6;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--primary);
     }
 
+    /* HEADER */
     header {
-      min-height: 100vh;
-      background: linear-gradient(rgba(31,59,92,0.6), rgba(31,59,92,0.6)), url('foto3.jpeg') center/cover no-repeat;
+      background: var(--white);
+      border-bottom: 1px solid #e5e7eb;
+      padding: 1.5rem 2rem;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
-      justify-content: center;
+      gap: 1.5rem;
     }
-
-    
-
-    .hero {
-  min-height: 90vh; /* bigger first row */
-  display: flex;
-  align-items: center;
-}
 
     .logo {
-      max-width: 160px;
-      margin-bottom: 2rem;
+      height: 70px;
+      border-radius: 10px;
     }
 
-    h1 {
+    .company h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-      color: var(--primary);
+      font-size: 2rem;
     }
 
-    h2 {
-      font-weight: 500;
+    .company span {
+      color: var(--accent);
+      font-size: 0.9rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* MAIN SECTION */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .info h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .info .title {
+      color: var(--accent);
+      font-weight: 600;
       margin-bottom: 2rem;
-      color: var(--text-light);
+      display: block;
     }
 
-    p {
-      margin-bottom: 1.5rem;
-      font-size: 1.05rem;
-    }
-
-    .quote {
-      font-style: italic;
-      color: var(--primary);
-      margin-top: 1rem;
-    }
-
-    section {
-      padding: 4rem 6rem;
+    .info p {
+      font-size: 1.1rem;
+      color: #475569;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
     }
 
     .contact {
       background: var(--primary);
-      color: white;
+      color: var(--white);
+      padding: 2.5rem;
+      border-radius: 20px;
     }
 
-    .contact h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
+    .contact div {
       margin-bottom: 1.5rem;
     }
 
-    .contact p {
-      margin-bottom: 0.8rem;
+    .contact label {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .contact span {
+      font-size: 1.1rem;
+      font-weight: 300;
     }
 
     footer {
       text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
-      color: var(--text-light);
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      border-top: 1px solid #e5e7eb;
     }
 
     @media (max-width: 900px) {
-      header {
+      .profile-grid {
         grid-template-columns: 1fr;
+        gap: 3rem;
       }
-      .hero-image {
-        min-height: 60vh;
+      header {
+        text-align: center;
       }
-      section {
-        padding: 3rem 2rem;
-      }
-      .hero-content {
-        padding: 3rem 2rem;
+      .header-inner {
+        flex-direction: column;
       }
     }
   </style>
 </head>
+
 <body>
 
 <header>
-  <div class="hero-content">
-    <img src="foto3.jpeg" alt="Home Story Gayrimenkul Logo" class="logo" />
-    <h1>Home Story Gayrimenkul</h1>
-    <h2>Yeni bir oluşum, yeni bir bakış açısı</h2>
-
-    <p>
-      Emlak sektöründe yenilikçi ve güvenilir bir yaklaşım benimseyerek yola çıktık.
-      Sürekli öğrenen dinamik bir ekip olarak her müşterimize özelleştirilmiş çözümler sunmayı hedefliyoruz.
-    </p>
-
-    <p class="quote">“Güven, vizyon ve modern gayrimenkul anlayışı.”</p>
+  <div class="header-inner">
+    <img src="foto1.jpeg" alt="Home Story Gayrimenkul Logo" class="logo">
+    <div class="company">
+      <h1>Home Story Gayrimenkul</h1>
+      <span>Yeni bir oluşum, yeni bir bakış açısı</span>
+    </div>
   </div>
 </header>
 
-<section>
-  <h2 style="font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 1.5rem;">
-    Ersun Baysungur
-  </h2>
-  <p><strong>Gayrimenkul Danışmanı</strong></p>
-  <p>
-    Müşteri memnuniyetini ve uzun vadeli güven ilişkilerini merkeze alan bir anlayışla,
-    konut ve yatırım alanlarında profesyonel çözümler sunmaktadır.
-  </p>
-</section>
+<main class="container">
+  <div class="profile-grid">
 
-<section class="contact">
-  <h3>İletişim</h3>
-  <p><strong>Tel:</strong> 0312 504 74 04</p>
-  <p><strong>GSM:</strong> 0552 532 84 00</p>
-  <p><strong>Adres:</strong><br>
-    Alacaatlı Mah. Kanuni Sultan Blv. No: 160 D:50<br>
-    Tona Rezidans, Çankaya / Ankara
-  </p>
-</section>
+    <!-- LEFT: PHOTO -->
+    <div class="profile-photo">
+      <img src="foto1.jpeg" alt="Ersun Baysungur">
+    </div>
+
+    <!-- RIGHT: INFO -->
+    <div class="info">
+      <h2>Ersun Baysungur</h2>
+      <span class="title">Gayrimenkul Danışmanı</span>
+
+      <p>
+        Müşteri memnuniyetini ve uzun vadeli güven ilişkilerini merkeze alan bir anlayışla
+        profesyonel çözümler sunmaktadır.
+      </p>
+
+      <div class="contact">
+        <div>
+          <label>GSM</label>
+          <span>0552 532 84 00</span>
+        </div>
+        <div>
+          <label>Adres</label>
+          <span>
+            Alacaatlı Mah. Kanuni Sultan Blv. No: 160 D:50<br>
+            Tona Rezidans, Çankaya / Ankara
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
 
 <footer>
   © 2026 Home Story Gayrimenkul
