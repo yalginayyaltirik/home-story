@@ -13,6 +13,7 @@
       --accent: #c2a35d;
       --bg: #f8fafc;
       --white: #ffffff;
+      --whatsapp: #25d366;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -55,7 +56,7 @@
       text-transform: uppercase;
     }
 
-    /* MAIN SECTION */
+    /* MAIN */
     .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -100,6 +101,7 @@
       color: var(--white);
       padding: 2.5rem;
       border-radius: 20px;
+      margin-bottom: 2rem;
     }
 
     .contact div {
@@ -120,6 +122,37 @@
       font-weight: 300;
     }
 
+    /* MAP */
+    .map-wrapper {
+      height: 300px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    }
+
+    /* WHATSAPP */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--whatsapp);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 15px 30px rgba(37, 211, 102, 0.35);
+      z-index: 1000;
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-5px);
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
@@ -133,11 +166,9 @@
         grid-template-columns: 1fr;
         gap: 3rem;
       }
-      header {
-        text-align: center;
-      }
       .header-inner {
         flex-direction: column;
+        text-align: center;
       }
     }
   </style>
@@ -158,12 +189,10 @@
 <main class="container">
   <div class="profile-grid">
 
-    <!-- LEFT: PHOTO -->
     <div class="profile-photo">
       <img src="foto3.jpeg" alt="Ersun Baysungur">
     </div>
 
-    <!-- RIGHT: INFO -->
     <div class="info">
       <h2>Ersun Baysungur</h2>
       <span class="title">Gayrimenkul Danışmanı</span>
@@ -186,10 +215,25 @@
           </span>
         </div>
       </div>
-    </div>
 
+      <!-- MAP -->
+      <div class="map-wrapper">
+        <iframe
+          width="100%"
+          height="100%"
+          frameborder="0"
+          scrolling="no"
+          src="https://maps.google.com/maps?q=Alacaatlı%20Mah.%20Kanuni%20Sultan%20Blv.%20No:%20160%20D:50%20Tona%20Rezidans&t=&z=15&ie=UTF8&iwloc=&output=embed">
+        </iframe>
+      </div>
+
+    </div>
   </div>
 </main>
+
+<a href="https://wa.me/905525328400" class="whatsapp-float" target="_blank">
+  WhatsApp’tan Yazın
+</a>
 
 <footer>
   © 2026 Home Story Gayrimenkul
