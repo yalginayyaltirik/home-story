@@ -67,72 +67,63 @@
             width: 100%;
         }
 
-        /* PORTFOLIO SECTION - UPDATED WITH IMAGE ON LEFT */
+        /* PORTFOLIO SECTION - MIRRORING TEAM LAYOUT */
         .portfolio-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem auto 0;
+            padding: 0 20px;
+        }
+
+        .portfolio-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px) saturate(160%);
+            -webkit-backdrop-filter: blur(25px) saturate(160%);
+            border-radius: 30px;
+            display: flex;
+            align-items: stretch;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-card:hover { transform: translateY(-5px); }
+
+        .portfolio-photo-box {
+            flex: 0 0 40%;
+            min-height: 200px;
+        }
+
+        .portfolio-photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio-info {
+            flex: 1;
+            padding: 25px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            margin-top: 2rem;
-            width: 100%;
-        }
-
-        .portfolio-grid {
-            display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
-            padding: 0 20px;
         }
 
-        .portfolio-pill {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: 15px; /* Squared slightly for image fit */
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: var(--primary);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            overflow: hidden; /* Clips image to pill corners */
-            padding: 0; /* Remove padding for image to fit edge */
+        .portfolio-info h3 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 1.4rem; 
+            margin-bottom: 10px; 
         }
 
-        .pill-image {
-            width: 80px; /* Adjust size as needed */
-            height: 80px;
-            object-fit: cover;
+        .portfolio-info .price-tag {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 15px;
             display: block;
-        }
-
-        .pill-content {
-            padding: 0 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .portfolio-pill:hover {
-            transform: translateY(-3px);
-            background: var(--white);
-            border-color: var(--accent);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-        }
-
-        .portfolio-pill span { font-size: 0.85rem; font-weight: 600; }
-
-        .house-icon {
-            background: var(--accent);
-            color: white;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
         }
 
         /* HIZMETLERIMIZ SECTION - FULL FIT */
@@ -149,7 +140,6 @@
         .services-image-box {
             background: var(--glass-bg);
             backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
             border: 1px solid var(--glass-border);
             border-radius: 20px;
             padding: 0; 
@@ -165,7 +155,7 @@
             display: block;
         }
 
-        /* TEAM GRID SECTION */
+        /* MAIN CONTAINER & TEAM GRID */
         .container {
             max-width: 1200px;
             margin: auto;
@@ -185,7 +175,6 @@
         .agent-card {
             background: var(--glass-bg);
             backdrop-filter: blur(25px) saturate(160%);
-            -webkit-backdrop-filter: blur(25px) saturate(160%);
             border-radius: 40px;
             display: flex;
             flex-direction: column;
@@ -194,8 +183,6 @@
             overflow: hidden;
             transition: transform 0.3s ease;
         }
-
-        .agent-card:hover { transform: translateY(-10px); }
 
         .profile-photo { 
             width: 100%;
@@ -210,19 +197,10 @@
             max-width: 320px;
             height: 100%;
             object-fit: cover;
-            object-position: top center;
             border-radius: 25px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        .content-area {
-            padding: 0 30px 30px 30px;
-            text-align: center;
-        }
-
-        .info h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 5px; }
-        .info .tag { color: var(--accent); font-weight: 600; font-size: 0.8rem; margin-bottom: 12px; display: block; text-transform: uppercase; }
-        .info .description { font-size: 0.95rem; color: #334155; margin-bottom: 20px; line-height: 1.5; min-height: 3em; }
+        .content-area { padding: 0 30px 30px 30px; text-align: center; }
 
         .pill {
             background: var(--inner-pill);
@@ -232,15 +210,10 @@
             margin-bottom: 15px;
         }
 
-        .pill label { display: block; font-size: 0.55rem; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 2px; }
+        .pill label { display: block; font-size: 0.55rem; text-transform: uppercase; color: var(--accent); font-weight: 700; }
         .pill span { font-size: 0.8rem; font-weight: 600; }
 
-        .office-section-wrapper {
-            grid-column: span 2;
-            width: 100%;
-            margin-top: 1rem;
-        }
-
+        .office-section-wrapper { grid-column: span 2; width: 100%; margin-top: 1rem; }
         .office-info {
             background: var(--glass-bg);
             backdrop-filter: blur(25px);
@@ -252,29 +225,15 @@
             border: 1px solid var(--glass-border);
         }
 
-        .map-wrapper {
-            flex: 1;
-            height: 180px;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
+        .map-wrapper { flex: 1; height: 180px; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.2); }
 
         .whatsapp-float {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 30px; right: 30px;
             background: var(--whatsapp);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
-            transition: 0.3s ease;
+            color: white; padding: 12px 25px; border-radius: 50px;
+            text-decoration: none; font-weight: 600;
+            display: flex; align-items: center; gap: 10px;
             z-index: 1000;
         }
 
@@ -284,8 +243,8 @@
             .team-grid { grid-template-columns: 1fr; }
             .office-section-wrapper { grid-column: span 1; }
             .office-info { flex-direction: column; }
-            .office-info > div:first-child { flex: 1 !important; width: 100%; }
-            .profile-photo { height: 320px; }
+            .portfolio-card { flex-direction: column; }
+            .portfolio-photo-box { flex: 0 0 auto; height: 200px; }
             .services-container { max-width: 100%; }
         }
     </style>
@@ -302,18 +261,21 @@
     </div>
 
     <div class="portfolio-container">
-        <div class="section-label">Portföylerimiz</div>
-        <div class="portfolio-grid">
-            <a href="https://www.sahibinden.com/ilan/emlak-konut-satilik-sinpas-altinoran-panorama-evleri-masrafsiz,bos-daire-1294460257/detay" 
-               target="_blank" 
-               class="portfolio-pill">
-                <img src="room.png" alt="Listing Photo" class="pill-image">
-                <div class="pill-content">
-                    <span>Sinpaş Altınoran Panorama</span>
-                    <div class="house-icon">🏠</div>
+        <div class="section-label">Öne Çıkan Portföyümüz</div>
+        <a href="https://www.sahibinden.com/ilan/emlak-konut-satilik-sinpas-altinoran-panorama-evleri-masrafsiz,bos-daire-1294460257/detay" 
+           target="_blank" class="portfolio-card">
+            <div class="portfolio-photo-box">
+                <img src="x.png" alt="Sinpaş Altınoran">
+            </div>
+            <div class="portfolio-info">
+                <span class="price-tag">Satılık Konut</span>
+                <h3>Sinpaş Altınoran Panorama</h3>
+                <div class="pill" style="margin-bottom: 0;">
+                    <label>Detaylar</label>
+                    <span>Masrafsız, Boş Daire • Hemen Taşın</span>
                 </div>
-            </a>
-        </div>
+            </div>
+        </a>
     </div>
 
     <div class="services-container">
@@ -335,7 +297,7 @@
                 <div class="info">
                     <span class="tag">Gayrimenkul Danışmanı</span>
                     <h2>Ersun Baysungur</h2>
-                    <p class="description">Emlak dünyasına taze bir soluk ve modern bir vizyon getiriyoruz. Dinamik ekibimizle yenilikçi çözümler üretiyoruz.</p>
+                    <p class="description">Emlak dünyasına taze bir soluk ve modern bir vizyon getiriyoruz.</p>
                     <div class="pill">
                         <label>Telefon</label>
                         <span>0552 532 84 00</span>
@@ -352,7 +314,7 @@
                 <div class="info">
                     <span class="tag">Gayrimenkul Danışmanı</span>
                     <h2>Bahar Gören</h2>
-                    <p class="description">Heyecanımızı uzmanlığımıza katıyor, her adımda güvenle büyüyoruz. Sizin için sadece bir aracı değil, yol arkadaşıyız.</p>
+                    <p class="description">Sizin için sadece bir aracı değil, yol arkadaşıyız.</p>
                     <div class="pill">
                         <label>Telefon</label>
                         <span>0532 241 83 22</span>
@@ -365,18 +327,9 @@
             <div class="section-label" style="margin-bottom: 2rem;">İletişim</div>
             <div class="office-info">
                 <div style="display: flex; flex-direction: column; gap: 10px; flex: 0 0 280px;">
-                    <div class="pill" style="margin-bottom:0;">
-                        <label>Lokasyon</label>
-                        <span>Alacaatlı Mah. Kanuni Sultan Süleyman Blv. Tona Rezidans No: 160 D:50 Çankaya / Ankara</span>
-                    </div>
-                    <div class="pill" style="margin-bottom:0;">
-                        <label>Ofis Telefon</label>
-                        <span>0312 504 74 04</span>
-                    </div>
-                    <div class="pill" style="margin-bottom:0;">
-                        <label>Web Adresi</label>
-                        <span>www.homestorygayrimenkul.com.tr</span>
-                    </div>
+                    <div class="pill" style="margin-bottom:0;"><label>Lokasyon</label><span>Alacaatlı Mah. Çankaya / Ankara</span></div>
+                    <div class="pill" style="margin-bottom:0;"><label>Ofis Telefon</label><span>0312 504 74 04</span></div>
+                    <div class="pill" style="margin-bottom:0;"><label>Web Adresi</label><span>www.homestorygayrimenkul.com.tr</span></div>
                 </div>
                 <div class="map-wrapper">
                     <iframe width="100%" height="100%" frameborder="0" style="border:0" scrolling="no" src="https://maps.google.com/maps?q=Tona%20Rezidans%20Ankara&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
