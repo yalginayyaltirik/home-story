@@ -55,7 +55,6 @@
         .company h1 { font-family: 'Playfair Display', serif; font-size: 1.5rem; line-height: 1; }
         .company p { font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; color: #64748b; font-weight: 600; }
 
-        /* SECTION LABELS */
         .section-label {
             color: var(--white);
             font-size: 0.7rem;
@@ -122,11 +121,11 @@
             font-size: 0.8rem;
         }
 
-        /* HIZMETLERIMIZ SECTION */
+        /* HIZMETLERIMIZ SECTION - RESIZED */
         .services-container {
             margin-top: 2.5rem;
             width: 100%;
-            max-width: 800px;
+            max-width: 400px; /* Reduced from 800px (Half Width) */
             padding: 0 20px;
             display: flex;
             flex-direction: column;
@@ -138,17 +137,20 @@
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             border: 1px solid var(--glass-border);
-            border-radius: 30px;
-            padding: 15px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            border-radius: 20px;
+            padding: 10px; /* Reduced padding */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             width: 100%;
             line-height: 0;
+            overflow: hidden;
         }
 
         .services-image-box img {
             width: 100%;
             height: auto;
-            border-radius: 20px;
+            max-height: 50vh; /* Limits length/height */
+            object-fit: contain;
+            border-radius: 15px;
             display: block;
         }
 
@@ -222,7 +224,6 @@
         .pill label { display: block; font-size: 0.55rem; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 2px; }
         .pill span { font-size: 0.8rem; font-weight: 600; }
 
-        /* OFFICE INFO SECTION */
         .office-section-wrapper {
             grid-column: span 2;
             width: 100%;
@@ -274,6 +275,7 @@
             .office-info { flex-direction: column; }
             .office-info > div:first-child { flex: 1 !important; width: 100%; }
             .profile-photo { height: 320px; }
+            .services-container { max-width: 300px; } /* Even smaller for mobile */
         }
     </style>
 </head>
@@ -311,7 +313,6 @@
 <main class="container">
     <div class="section-label" style="margin-bottom: 2rem;">Ekibimiz</div>
     <div class="team-grid">
-        
         <div class="agent-card">
             <div class="profile-photo">
                 <img src="ersun_foto.jpeg" alt="Ersun Baysungur">
@@ -368,7 +369,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </main>
 
