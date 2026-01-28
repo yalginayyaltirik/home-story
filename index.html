@@ -34,7 +34,8 @@
         header {
             padding: 3rem 1rem 1rem;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
         }
 
         .logo-capsule {
@@ -54,6 +55,71 @@
         .company h1 { font-family: 'Playfair Display', serif; font-size: 1.5rem; line-height: 1; }
         .company p { font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; color: #64748b; font-weight: 600; }
 
+        /* PORTFOLIO SECTION STYLES */
+        .portfolio-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2rem;
+            width: 100%;
+        }
+
+        .portfolio-label {
+            color: var(--white);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .portfolio-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 0 20px;
+        }
+
+        .portfolio-pill {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            padding: 10px 20px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--primary);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .portfolio-pill:hover {
+            transform: translateY(-3px);
+            background: var(--white);
+            border-color: var(--accent);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .portfolio-pill span { font-size: 0.85rem; font-weight: 600; }
+
+        .house-icon {
+            background: var(--accent);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        /* TEAM GRID STYLES */
         .container {
             max-width: 1200px;
             margin: auto;
@@ -81,7 +147,6 @@
 
         .agent-card:hover { transform: translateY(-10px); }
 
-        /* PHOTO FIXES */
         .profile-photo { 
             width: 100%;
             height: 380px; 
@@ -92,10 +157,10 @@
         
         .profile-photo img {
             width: 100%;
-            max-width: 320px; /* Prevents "too wide" appearance */
+            max-width: 320px;
             height: 100%;
             object-fit: cover;
-            object-position: top center; /* Ensures faces aren't cut off */
+            object-position: top center;
             border-radius: 25px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
@@ -120,7 +185,6 @@
         .pill label { display: block; font-size: 0.55rem; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 2px; }
         .pill span { font-size: 0.8rem; font-weight: 600; }
 
-        /* OFFICE INFO LAYOUT */
         .office-info {
             grid-column: span 2;
             background: var(--glass-bg);
@@ -178,6 +242,20 @@
         <div class="company">
             <h1>Home Story</h1>
             <p>Gayrimenkul Danışmanlığı</p>
+        </div>
+    </div>
+
+    <div class="portfolio-container">
+        <div class="portfolio-label">Portföylerimiz</div>
+        <div class="portfolio-grid">
+            
+            <a href="https://www.sahibinden.com/ilan/emlak-konut-satilik-sinpas-altinoran-panorama-evleri-masrafsiz,bos-daire-1294460257/detay" 
+               target="_blank" 
+               class="portfolio-pill">
+                <span>Sinpaş Altınoran Panorama</span>
+                <div class="house-icon">🏠</div>
+            </a>
+            
         </div>
     </div>
 </header>
