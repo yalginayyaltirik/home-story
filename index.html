@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Home Story Gayrimenkul</title>
+    <title>Home Story Gayrimenkul | Ekibimiz</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -60,7 +60,6 @@
             padding: 2rem;
         }
 
-        /* TEAM GRID SYSTEM */
         .team-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -80,13 +79,11 @@
             transition: transform 0.3s ease;
         }
 
-        .agent-card:hover {
-            transform: translateY(-10px);
-        }
+        .agent-card:hover { transform: translateY(-10px); }
 
+        /* PHOTO FIXES */
         .profile-photo { 
             width: 100%;
-            /* Limiting height and adding margin auto to keep it centered */
             height: 380px; 
             padding: 20px;
             display: flex;
@@ -94,13 +91,11 @@
         }
         
         .profile-photo img {
-            /* This ensures the image doesn't spread too wide */
             width: 100%;
-            max-width: 300px; 
+            max-width: 320px; /* Prevents "too wide" appearance */
             height: 100%;
             object-fit: cover;
-            /* Keeps the focus on the face/top of the photo */
-            object-position: top center; 
+            object-position: top center; /* Ensures faces aren't cut off */
             border-radius: 25px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
@@ -125,7 +120,7 @@
         .pill label { display: block; font-size: 0.55rem; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 2px; }
         .pill span { font-size: 0.8rem; font-weight: 600; }
 
-        /* SHARED CONTACT/MAP BOX */
+        /* OFFICE INFO LAYOUT */
         .office-info {
             grid-column: span 2;
             background: var(--glass-bg);
@@ -141,7 +136,7 @@
 
         .map-wrapper {
             flex: 1;
-            height: 150px;
+            height: 180px;
             border-radius: 20px;
             overflow: hidden;
             border: 1px solid rgba(255,255,255,0.2);
@@ -165,25 +160,24 @@
             z-index: 1000;
         }
 
-        .whatsapp-float:hover { transform: translateY(-5px); }
-
         footer { text-align: center; padding: 2rem; color: rgba(255,255,255,0.4); font-size: 0.75rem; }
 
         @media (max-width: 900px) {
             .team-grid { grid-template-columns: 1fr; }
             .office-info { grid-column: span 1; flex-direction: column; }
-            .profile-photo { height: 300px; }
+            .office-info > div:first-child { flex: 1 !important; width: 100%; }
+            .profile-photo { height: 320px; }
         }
     </style>
 </head>
-
 <body>
 
 <header>
     <div class="logo-capsule">
         <img src="logo.jpeg" alt="Logo" class="logo">
         <div class="company">
-            <h1>Home Story Gayrimenkul</h1>
+            <h1>Home Story</h1>
+            <p>Gayrimenkul Danışmanlığı</p>
         </div>
     </div>
 </header>
@@ -199,9 +193,7 @@
                 <div class="info">
                     <span class="tag">Gayrimenkul Danışmanı</span>
                     <h2>Ersun Baysungur</h2>
-                    <p class="description">
-                        Emlak dünyasına taze bir soluk ve modern bir vizyon getiriyoruz. Dinamik ekibimizle, beklentilerinize özel, yenilikçi çözümler üretiyoruz.
-                    </p>
+                    <p class="description">Emlak dünyasına taze bir soluk ve modern bir vizyon getiriyoruz. Dinamik ekibimizle yenilikçi çözümler üretiyoruz.</p>
                     <div class="pill">
                         <label>Telefon</label>
                         <span>0552 532 84 00</span>
@@ -212,15 +204,13 @@
 
         <div class="agent-card">
             <div class="profile-photo">
-                <img src="bahar_foto.png" alt="Bahar">
+                <img src="bahar_foto.png" alt="Bahar Gören">
             </div>
             <div class="content-area">
                 <div class="info">
                     <span class="tag">Gayrimenkul Danışmanı</span>
                     <h2>Bahar Gören</h2>
-                    <p class="description">
-                        Heyecanımızı uzmanlığımıza katıyor, her adımda güvenle büyüyoruz. Sizin için sadece bir aracı değil, yol arkadaşıyız.
-                    </p>
+                    <p class="description">Heyecanımızı uzmanlığımıza katıyor, her adımda güvenle büyüyoruz. Sizin için sadece bir aracı değil, yol arkadaşıyız.</p>
                     <div class="pill">
                         <label>Telefon</label>
                         <span>0312 504 74 04</span>
@@ -230,18 +220,18 @@
         </div>
 
         <div class="office-info">
-            <div class="pill" style="margin-bottom:0; flex: 0 0 250px;">
-                <label>Lokasyon</label>
-                <span>Alacaatlı Mah. Kanuni Sultan Süleyman Blv. Tona Rezidans No: 160 D:50 Çankaya / Ankara</span>
+            <div style="display: flex; flex-direction: column; gap: 10px; flex: 0 0 280px;">
+                <div class="pill" style="margin-bottom:0;">
+                    <label>Lokasyon</label>
+                    <span>Alacaatlı Mah. Kanuni Sultan Süleyman Blv. Tona Rezidans No: 160 D:50 Çankaya / Ankara</span>
+                </div>
+                <div class="pill" style="margin-bottom:0;">
+                    <label>Ofis Telefon</label>
+                    <span>0312 504 74 04</span>
+                </div>
             </div>
             <div class="map-wrapper">
-                <iframe
-                    width="100%"
-                    height="100%"
-                    frameborder="0"
-                    scrolling="no"
-                    src="https://maps.google.com/maps?q=Alacaatlı%20Mah.%20Kanuni%20Sultan%20Blv.%20No:%20160%20D:50%20Tona%20Rezidans&t=&z=15&ie=UTF8&iwloc=&output=embed">
-                </iframe>
+                <iframe width="100%" height="100%" frameborder="0" style="border:0" scrolling="no" src="https://maps.google.com/maps?q=Tona%20Rezidans%20Ankara&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
             </div>
         </div>
 
@@ -253,7 +243,7 @@
 </a>
 
 <footer>
-    © 2026 Home Story Gayrimenkul | Ersun Baysungur & Bahar
+    © 2026 Home Story Gayrimenkul | Ersun Baysungur & Bahar Gören
 </footer>
 
 </body>
