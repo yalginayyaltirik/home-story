@@ -65,6 +65,7 @@
             font-weight: 600;
             opacity: 0.9;
             text-align: center;
+            width: 100%;
         }
 
         /* PORTFOLIO SECTION */
@@ -151,7 +152,7 @@
             display: block;
         }
 
-        /* TEAM SECTION */
+        /* TEAM GRID SECTION */
         .container {
             max-width: 1200px;
             margin: auto;
@@ -221,13 +222,18 @@
         .pill label { display: block; font-size: 0.55rem; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 2px; }
         .pill span { font-size: 0.8rem; font-weight: 600; }
 
-        .office-info {
+        /* OFFICE INFO SECTION */
+        .office-section-wrapper {
             grid-column: span 2;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .office-info {
             background: var(--glass-bg);
             backdrop-filter: blur(25px);
             border-radius: 30px;
             padding: 20px;
-            margin-top: 1rem;
             display: flex;
             align-items: center;
             gap: 20px;
@@ -264,10 +270,10 @@
 
         @media (max-width: 900px) {
             .team-grid { grid-template-columns: 1fr; }
-            .office-info { grid-column: span 1; flex-direction: column; }
+            .office-section-wrapper { grid-column: span 1; }
+            .office-info { flex-direction: column; }
             .office-info > div:first-child { flex: 1 !important; width: 100%; }
             .profile-photo { height: 320px; }
-            .services-container { max-width: 100%; }
         }
     </style>
 </head>
@@ -304,7 +310,6 @@
 
 <main class="container">
     <div class="section-label" style="margin-bottom: 2rem;">Ekibimiz</div>
-
     <div class="team-grid">
         
         <div class="agent-card">
@@ -341,23 +346,26 @@
             </div>
         </div>
 
-        <div class="office-info">
-            <div style="display: flex; flex-direction: column; gap: 10px; flex: 0 0 280px;">
-                <div class="pill" style="margin-bottom:0;">
-                    <label>Lokasyon</label>
-                    <span>Alacaatlı Mah. Kanuni Sultan Süleyman Blv. Tona Rezidans No: 160 D:50 Çankaya / Ankara</span>
+        <div class="office-section-wrapper">
+            <div class="section-label" style="margin-bottom: 2rem;">İletişim</div>
+            <div class="office-info">
+                <div style="display: flex; flex-direction: column; gap: 10px; flex: 0 0 280px;">
+                    <div class="pill" style="margin-bottom:0;">
+                        <label>Lokasyon</label>
+                        <span>Alacaatlı Mah. Kanuni Sultan Süleyman Blv. Tona Rezidans No: 160 D:50 Çankaya / Ankara</span>
+                    </div>
+                    <div class="pill" style="margin-bottom:0;">
+                        <label>Ofis Telefon</label>
+                        <span>0312 504 74 04</span>
+                    </div>
+                    <div class="pill" style="margin-bottom:0;">
+                        <label>Web Adresi</label>
+                        <span>www.homestorygayrimenkul.com.tr</span>
+                    </div>
                 </div>
-                <div class="pill" style="margin-bottom:0;">
-                    <label>Ofis Telefon</label>
-                    <span>0312 504 74 04</span>
+                <div class="map-wrapper">
+                    <iframe width="100%" height="100%" frameborder="0" style="border:0" scrolling="no" src="https://maps.google.com/maps?q=Tona%20Rezidans%20Ankara&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
                 </div>
-                <div class="pill" style="margin-bottom:0;">
-                    <label>Web Adresi</label>
-                    <span>www.homestorygayrimenkul.com.tr</span>
-                </div>
-            </div>
-            <div class="map-wrapper">
-                <iframe width="100%" height="100%" frameborder="0" style="border:0" scrolling="no" src="https://maps.google.com/maps?q=Tona%20Rezidans%20Ankara&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
             </div>
         </div>
 
