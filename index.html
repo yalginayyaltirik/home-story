@@ -67,7 +67,7 @@
             text-align: center;
         }
 
-        /* PORTFOLIO SECTION STYLES */
+        /* PORTFOLIO SECTION */
         .portfolio-container {
             display: flex;
             flex-direction: column;
@@ -121,7 +121,7 @@
             font-size: 0.8rem;
         }
 
-        /* HIZMETLERIMIZ SECTION STYLES */
+        /* HIZMETLERIMIZ SECTION */
         .services-container {
             margin-top: 2.5rem;
             width: 100%;
@@ -151,17 +151,21 @@
             display: block;
         }
 
-        /* TEAM GRID STYLES */
+        /* TEAM SECTION */
         .container {
             max-width: 1200px;
             margin: auto;
             padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .team-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
+            width: 100%;
         }
 
         .agent-card {
@@ -299,6 +303,8 @@
 </header>
 
 <main class="container">
+    <div class="section-label" style="margin-bottom: 2rem;">Ekibimiz</div>
+
     <div class="team-grid">
         
         <div class="agent-card">
