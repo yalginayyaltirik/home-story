@@ -67,63 +67,49 @@
             width: 100%;
         }
 
-        /* PORTFOLIO SECTION - MIRRORING TEAM LAYOUT */
-        .portfolio-container {
+        /* PORTFOLIO GRID - 2 CELLS */
+        .portfolio-grid-custom {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
             width: 100%;
-            max-width: 800px;
+            max-width: 1200px;
             margin: 2rem auto 0;
-            padding: 0 20px;
+            padding: 0 2rem;
         }
 
-        .portfolio-card {
+        .room-cell-image {
             background: var(--glass-bg);
-            backdrop-filter: blur(25px) saturate(160%);
-            -webkit-backdrop-filter: blur(25px) saturate(160%);
-            border-radius: 30px;
-            display: flex;
-            align-items: stretch;
+            backdrop-filter: blur(15px);
             border: 1px solid var(--glass-border);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border-radius: 30px;
             overflow: hidden;
-            text-decoration: none;
-            color: inherit;
-            transition: transform 0.3s ease;
+            line-height: 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
 
-        .portfolio-card:hover { transform: translateY(-5px); }
-
-        .portfolio-photo-box {
-            flex: 0 0 40%;
-            min-height: 200px;
-        }
-
-        .portfolio-photo-box img {
+        .room-cell-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            min-height: 300px;
         }
 
-        .portfolio-info {
-            flex: 1;
-            padding: 25px;
+        .room-cell-info {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 30px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            gap: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
 
-        .portfolio-info h3 { 
+        .room-cell-info h3 { 
             font-family: 'Playfair Display', serif; 
-            font-size: 1.4rem; 
-            margin-bottom: 10px; 
-        }
-
-        .portfolio-info .price-tag {
-            color: var(--accent);
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            display: block;
+            font-size: 1.8rem; 
         }
 
         /* HIZMETLERIMIZ SECTION - FULL FIT */
@@ -149,11 +135,7 @@
             overflow: hidden;
         }
 
-        .services-image-box img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+        .services-image-box img { width: 100%; height: auto; display: block; }
 
         /* MAIN CONTAINER & TEAM GRID */
         .container {
@@ -181,7 +163,6 @@
             border: 1px solid var(--glass-border);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
             overflow: hidden;
-            transition: transform 0.3s ease;
         }
 
         .profile-photo { 
@@ -204,14 +185,19 @@
 
         .pill {
             background: var(--inner-pill);
-            padding: 10px 15px;
+            padding: 12px 18px;
             border-radius: 15px;
             border: 1px solid rgba(255,255,255,0.3);
-            margin-bottom: 15px;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: 0.3s;
         }
+        
+        .pill:hover { background: var(--white); border-color: var(--accent); }
 
-        .pill label { display: block; font-size: 0.55rem; text-transform: uppercase; color: var(--accent); font-weight: 700; }
-        .pill span { font-size: 0.8rem; font-weight: 600; }
+        .pill label { display: block; font-size: 0.6rem; text-transform: uppercase; color: var(--accent); font-weight: 700; cursor: pointer; }
+        .pill span { font-size: 0.9rem; font-weight: 600; cursor: pointer; }
 
         .office-section-wrapper { grid-column: span 2; width: 100%; margin-top: 1rem; }
         .office-info {
@@ -240,11 +226,9 @@
         footer { text-align: center; padding: 2rem; color: rgba(255,255,255,0.4); font-size: 0.75rem; }
 
         @media (max-width: 900px) {
-            .team-grid { grid-template-columns: 1fr; }
+            .team-grid, .portfolio-grid-custom { grid-template-columns: 1fr; }
             .office-section-wrapper { grid-column: span 1; }
             .office-info { flex-direction: column; }
-            .portfolio-card { flex-direction: column; }
-            .portfolio-photo-box { flex: 0 0 auto; height: 200px; }
             .services-container { max-width: 100%; }
         }
     </style>
@@ -260,22 +244,31 @@
         </div>
     </div>
 
-    <div class="portfolio-container">
-        <div class="section-label">Öne Çıkan Portföyümüz</div>
-        <a href="https://www.sahibinden.com/ilan/emlak-konut-satilik-sinpas-altinoran-panorama-evleri-masrafsiz,bos-daire-1294460257/detay" 
-           target="_blank" class="portfolio-card">
-            <div class="portfolio-photo-box">
-                <img src="room.png" alt="Sinpaş Altınoran">
+    <div class="section-label" style="margin-top: 3rem; margin-bottom: 0;">Öne Çıkan Portföyümüz</div>
+    <div class="portfolio-grid-custom">
+        <div class="room-cell-image">
+            <img src="room.png" alt="Listing Room Photo">
+        </div>
+        
+        <div class="room-cell-info">
+            <h3>Sinpaş Altınoran Panorama</h3>
+            
+            <a href="https://www.sahibinden.com/ilan/emlak-konut-satilik-sinpas-altinoran-panorama-evleri-masrafsiz,bos-daire-1294460257/detay" 
+               target="_blank" class="pill">
+                <label>Satılık Konut</label>
+                <span>Sinpaş Altınoran Panorama • <b>İlanı Görüntüle 🏠</b></span>
+            </a>
+
+            <div class="pill">
+                <label>Durum</label>
+                <span>Masrafsız, Boş Daire • Hemen Taşınmaya Uygun</span>
             </div>
-            <div class="portfolio-info">
-                <span class="price-tag">Satılık Konut</span>
-                <h3>Sinpaş Altınoran Panorama</h3>
-                <div class="pill" style="margin-bottom: 0;">
-                    <label>Detaylar</label>
-                    <span>Masrafsız, Boş Daire • Hemen Taşın</span>
-                </div>
+
+            <div class="pill">
+                <label>Konum</label>
+                <span>Çankaya, Ankara</span>
             </div>
-        </a>
+        </div>
     </div>
 
     <div class="services-container">
@@ -290,35 +283,25 @@
     <div class="section-label" style="margin-bottom: 2rem;">Ekibimiz</div>
     <div class="team-grid">
         <div class="agent-card">
-            <div class="profile-photo">
-                <img src="ersun_foto.jpeg" alt="Ersun Baysungur">
-            </div>
+            <div class="profile-photo"><img src="ersun_foto.jpeg" alt="Ersun Baysungur"></div>
             <div class="content-area">
                 <div class="info">
                     <span class="tag">Gayrimenkul Danışmanı</span>
                     <h2>Ersun Baysungur</h2>
                     <p class="description">Emlak dünyasına taze bir soluk ve modern bir vizyon getiriyoruz.</p>
-                    <div class="pill">
-                        <label>Telefon</label>
-                        <span>0552 532 84 00</span>
-                    </div>
+                    <div class="pill"><label>Telefon</label><span>0552 532 84 00</span></div>
                 </div>
             </div>
         </div>
 
         <div class="agent-card">
-            <div class="profile-photo">
-                <img src="bahar_foto.png" alt="Bahar Gören">
-            </div>
+            <div class="profile-photo"><img src="bahar_foto.png" alt="Bahar Gören"></div>
             <div class="content-area">
                 <div class="info">
                     <span class="tag">Gayrimenkul Danışmanı</span>
                     <h2>Bahar Gören</h2>
                     <p class="description">Sizin için sadece bir aracı değil, yol arkadaşıyız.</p>
-                    <div class="pill">
-                        <label>Telefon</label>
-                        <span>0532 241 83 22</span>
-                    </div>
+                    <div class="pill"><label>Telefon</label><span>0532 241 83 22</span></div>
                 </div>
             </div>
         </div>
