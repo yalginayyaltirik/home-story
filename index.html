@@ -9,164 +9,126 @@
 
     <style>
         :root {
-            --primary-dark: #1e293b;
-            --accent-gold: #c2a35d;
-            --glass-white: rgba(248, 250, 252, 0.9);
-            --glass-border: rgba(255, 255, 255, 0.6);
-            --whatsapp-green: #25d366;
+            --primary: #0f172a;
+            --accent: #c2a35d;
+            --white: #ffffff;
+            --whatsapp: #25d366;
+            /* Ultra-smooth glass settings */
+            --glass-bg: rgba(255, 255, 255, 0.75); /* Lowered opacity for better blending */
+            --glass-border: rgba(255, 255, 255, 0.5);
+            --inner-pill: rgba(255, 255, 255, 0.4);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            color: var(--primary-dark);
+            color: var(--primary);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            /* Background: Cool residence with a deep, smooth gradient overlay */
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.7) 100%), 
+            /* Darker, deeper overlay to make the transparency smoother */
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
                         url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1920') no-repeat center center fixed;
             background-size: cover;
         }
 
-        /* REMARKABLE LOGO BLOCK */
+        /* REMARKABLE LOGO CAPSULE */
         header {
-            padding: 40px 20px;
+            padding: 3rem 1rem 1rem;
             display: flex;
             justify-content: center;
         }
 
-        .header-capsule {
-            background: var(--glass-white);
-            backdrop-filter: blur(12px);
-            padding: 12px 35px;
-            border-radius: 25px;
+        .logo-capsule {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px) saturate(180%);
+            -webkit-backdrop-filter: blur(15px) saturate(180%);
+            padding: 0.8rem 2.5rem;
+            border-radius: 50px;
             display: flex;
             align-items: center;
             gap: 20px;
             border: 1px solid var(--glass-border);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
-        .logo {
-            height: 65px;
-            border-radius: 8px;
-        }
+        .logo { height: 60px; border-radius: 8px; }
 
-        .company-name h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            line-height: 1.1;
-        }
+        .company h1 { font-family: 'Playfair Display', serif; font-size: 1.5rem; line-height: 1; }
+        .company p { font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; color: #64748b; font-weight: 600; }
 
-        .company-name p {
-            font-size: 0.75rem;
-            color: #64748b;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-
-        /* MAIN GLASS CARD */
+        /* MAIN SMOOTH CARD */
         .container {
             max-width: 1000px;
-            margin: 0 auto 60px auto;
-            padding: 0 20px;
+            margin: auto;
+            padding: 2rem;
         }
 
-        .glass-main {
-            background: var(--glass-white);
-            backdrop-filter: blur(20px);
+        .main-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px) saturate(160%);
+            -webkit-backdrop-filter: blur(25px) saturate(160%);
             border-radius: 40px;
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 40px 100px rgba(0,0,0,0.4);
-            padding: 40px;
             display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 40px;
+            grid-template-columns: 0.9fr 1.1fr;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
         }
 
-        /* PROFILE SECTION */
-        .profile-side img {
+        .profile-photo { padding: 30px; }
+        .profile-photo img {
             width: 100%;
-            aspect-ratio: 1/1.2;
+            height: 100%;
             object-fit: cover;
-            border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        /* INFO SECTION */
-        .details-side {
+        .content-area {
+            padding: 40px 50px 40px 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
-        .details-side h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 8px;
-        }
+        .info h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 5px; }
+        .info .tag { color: var(--accent); font-weight: 600; font-size: 0.9rem; margin-bottom: 15px; display: block; }
+        .info .description { font-size: 1rem; color: #334155; margin-bottom: 25px; line-height: 1.5; }
 
-        .details-side .tagline {
-            color: var(--accent-gold);
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .details-side .bio {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #475569;
-            margin-bottom: 25px;
-        }
-
-        /* COMPACT CONTACT GRID */
-        .contact-pill-grid {
+        /* COMPACT TRANSPARENT PILLS */
+        .contact-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
+            gap: 15px;
             margin-bottom: 25px;
         }
 
-        .contact-pill {
-            background: rgba(255, 255, 255, 0.5);
+        .pill {
+            background: var(--inner-pill);
             padding: 12px 20px;
-            border-radius: 15px;
-            border: 1px solid rgba(255,255,255,0.8);
+            border-radius: 18px;
+            border: 1px solid rgba(255,255,255,0.3);
         }
 
-        .contact-pill label {
-            display: block;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            color: var(--accent-gold);
-            font-weight: 700;
-            margin-bottom: 2px;
-        }
+        .pill label { display: block; font-size: 0.6rem; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 2px; }
+        .pill span { font-size: 0.85rem; font-weight: 500; }
 
-        .contact-pill span {
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        /* MAP BOX */
-        .map-box {
-            height: 180px;
+        /* MAP AREA */
+        .map-wrapper {
+            height: 160px;
             border-radius: 20px;
             overflow: hidden;
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
-        /* FLOATING WHATSAPP */
-        .whatsapp-btn {
+        /* WHATSAPP FIXED */
+        .whatsapp-float {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: var(--whatsapp-green);
+            background: var(--whatsapp);
             color: white;
             padding: 12px 25px;
             border-radius: 50px;
@@ -175,28 +137,20 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
-            transition: all 0.3s ease;
-            z-index: 9999;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            transition: 0.3s ease;
+            z-index: 1000;
         }
 
-        .whatsapp-btn:hover {
-            transform: translateY(-5px);
-            background: #20ba5a;
-        }
+        .whatsapp-float:hover { transform: translateY(-5px); }
 
-        footer {
-            text-align: center;
-            padding-bottom: 40px;
-            color: rgba(255,255,255,0.5);
-            font-size: 0.8rem;
-        }
+        footer { text-align: center; padding: 2rem; color: rgba(255,255,255,0.4); font-size: 0.75rem; }
 
-        @media (max-width: 850px) {
-            .glass-main { grid-template-columns: 1fr; padding: 25px; }
-            .details-side h2 { font-size: 2rem; }
-            .contact-pill-grid { grid-template-columns: 1fr; }
-            .header-capsule { padding: 10px 20px; }
+        @media (max-width: 900px) {
+            .main-card { grid-template-columns: 1fr; margin-top: 1rem; }
+            .content-area { padding: 0 30px 40px; }
+            .profile-photo { padding: 20px; }
+            .contact-row { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -204,9 +158,9 @@
 <body>
 
 <header>
-    <div class="header-capsule">
-        <img src="foto4.jpeg" alt="Home Story Logo" class="logo">
-        <div class="company-name">
+    <div class="logo-capsule">
+        <img src="foto4.jpeg" alt="Logo" class="logo">
+        <div class="company">
             <h1>Home Story</h1>
             <p>Gayrimenkul Danışmanlığı</p>
         </div>
@@ -214,47 +168,47 @@
 </header>
 
 <main class="container">
-    <div class="glass-main">
-        <div class="profile-side">
+    <div class="main-card">
+        <div class="profile-photo">
             <img src="foto3.jpeg" alt="Ersun Baysungur">
         </div>
 
-        <div class="details-side">
-            <span class="tagline">Gayrimenkul Danışmanı</span>
-            <h2>Ersun Baysungur</h2>
-            
-            <p class="bio">
-                Müşteri memnuniyetini ve uzun vadeli güven ilişkilerini merkeze alan bir anlayışla 
-                size özel profesyonel çözümler sunuyoruz.
-            </p>
+        <div class="content-area">
+            <div class="info">
+                <span class="tag">Gayrimenkul Danışmanı</span>
+                <h2>Ersun Baysungur</h2>
+                <p class="description">
+                    Müşteri memnuniyetini ve uzun vadeli güven ilişkilerini merkeze alan 
+                    profesyonel çözümler sunuyoruz.
+                </p>
 
-            <div class="contact-pill-grid">
-                <div class="contact-pill">
-                    <label>Telefon</label>
-                    <span>0552 532 84 00</span>
+                <div class="contact-row">
+                    <div class="pill">
+                        <label>Telefon</label>
+                        <span>0552 532 84 00</span>
+                    </div>
+                    <div class="pill">
+                        <label>Lokasyon</label>
+                        <span>Çankaya / Ankara</span>
+                    </div>
                 </div>
-                <div class="contact-pill">
-                    <label>Lokasyon</label>
-                    <span>Çankaya / Ankara</span>
-                </div>
-            </div>
 
-            <div class="map-box">
-                <iframe
-                    width="100%"
-                    height="100%"
-                    frameborder="0"
-                    scrolling="no"
-                    src="https://maps.google.com/maps?q=Alacaatlı%20Mah.%20Kanuni%20Sultan%20Blv.%20No:%20160%20D:50%20Tona%20Rezidans&t=&z=15&ie=UTF8&iwloc=&output=embed">
-                </iframe>
+                <div class="map-wrapper">
+                    <iframe
+                        width="100%"
+                        height="100%"
+                        frameborder="0"
+                        scrolling="no"
+                        src="https://maps.google.com/maps?q=Alacaatlı%20Mah.%20Kanuni%20Sultan%20Blv.%20No:%20160%20D:50%20Tona%20Rezidans&t=&z=15&ie=UTF8&iwloc=&output=embed">
+                    </iframe>
+                </div>
             </div>
         </div>
     </div>
 </main>
 
-<a href="https://wa.me/905525328400" class="whatsapp-btn" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="20" alt="WA">
-    WhatsApp’tan Yazın
+<a href="https://wa.me/905525328400" class="whatsapp-float" target="_blank">
+    <span>WhatsApp’tan Yazın</span>
 </a>
 
 <footer>
