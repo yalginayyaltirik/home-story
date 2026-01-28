@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Home Story Gayrimenkul | Ersun Baysungur</title>
+    <title>Home Story Gayrimenkul | Ekibimiz</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -13,8 +13,7 @@
             --accent: #c2a35d;
             --white: #ffffff;
             --whatsapp: #25d366;
-            /* Ultra-smooth glass settings */
-            --glass-bg: rgba(255, 255, 255, 0.75); /* Lowered opacity for better blending */
+            --glass-bg: rgba(255, 255, 255, 0.75);
             --glass-border: rgba(255, 255, 255, 0.5);
             --inner-pill: rgba(255, 255, 255, 0.4);
         }
@@ -27,13 +26,11 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            /* Darker, deeper overlay to make the transparency smoother */
             background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
                         url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1920') no-repeat center center fixed;
             background-size: cover;
         }
 
-        /* REMARKABLE LOGO CAPSULE */
         header {
             padding: 3rem 1rem 1rem;
             display: flex;
@@ -54,30 +51,45 @@
         }
 
         .logo { height: 60px; border-radius: 8px; }
-
         .company h1 { font-family: 'Playfair Display', serif; font-size: 1.5rem; line-height: 1; }
         .company p { font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; color: #64748b; font-weight: 600; }
 
-        /* MAIN SMOOTH CARD */
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: auto;
             padding: 2rem;
         }
 
-        .main-card {
+        /* TEAM GRID SYSTEM */
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .agent-card {
             background: var(--glass-bg);
             backdrop-filter: blur(25px) saturate(160%);
             -webkit-backdrop-filter: blur(25px) saturate(160%);
             border-radius: 40px;
-            display: grid;
-            grid-template-columns: 0.9fr 1.1fr;
+            display: flex;
+            flex-direction: column;
             border: 1px solid var(--glass-border);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
             overflow: hidden;
+            transition: transform 0.3s ease;
         }
 
-        .profile-photo { padding: 30px; }
+        .agent-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .profile-photo { 
+            width: 100%;
+            height: 350px;
+            padding: 20px;
+        }
+        
         .profile-photo img {
             width: 100%;
             height: 100%;
@@ -87,43 +99,47 @@
         }
 
         .content-area {
-            padding: 40px 50px 40px 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            padding: 0 30px 30px 30px;
+            text-align: center;
         }
 
-        .info h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 5px; }
-        .info .tag { color: var(--accent); font-weight: 600; font-size: 0.9rem; margin-bottom: 15px; display: block; }
-        .info .description { font-size: 1rem; color: #334155; margin-bottom: 25px; line-height: 1.5; }
-
-        /* COMPACT TRANSPARENT PILLS */
-        .contact-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
+        .info h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 5px; }
+        .info .tag { color: var(--accent); font-weight: 600; font-size: 0.8rem; margin-bottom: 12px; display: block; text-transform: uppercase; }
+        .info .description { font-size: 0.95rem; color: #334155; margin-bottom: 20px; line-height: 1.5; min-height: 3em; }
 
         .pill {
             background: var(--inner-pill);
-            padding: 12px 20px;
-            border-radius: 18px;
+            padding: 10px 15px;
+            border-radius: 15px;
             border: 1px solid rgba(255,255,255,0.3);
+            margin-bottom: 15px;
         }
 
-        .pill label { display: block; font-size: 0.6rem; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 2px; }
-        .pill span { font-size: 0.85rem; font-weight: 500; }
+        .pill label { display: block; font-size: 0.55rem; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 2px; }
+        .pill span { font-size: 0.8rem; font-weight: 600; }
 
-        /* MAP AREA */
+        /* SHARED CONTACT/MAP BOX */
+        .office-info {
+            grid-column: span 2;
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px);
+            border-radius: 30px;
+            padding: 20px;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border: 1px solid var(--glass-border);
+        }
+
         .map-wrapper {
-            height: 160px;
+            flex: 1;
+            height: 150px;
             border-radius: 20px;
             overflow: hidden;
             border: 1px solid rgba(255,255,255,0.2);
         }
 
-        /* WHATSAPP FIXED */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -147,10 +163,9 @@
         footer { text-align: center; padding: 2rem; color: rgba(255,255,255,0.4); font-size: 0.75rem; }
 
         @media (max-width: 900px) {
-            .main-card { grid-template-columns: 1fr; margin-top: 1rem; }
-            .content-area { padding: 0 30px 40px; }
-            .profile-photo { padding: 20px; }
-            .contact-row { grid-template-columns: 1fr; }
+            .team-grid { grid-template-columns: 1fr; }
+            .office-info { grid-column: span 1; flex-direction: column; }
+            .profile-photo { height: 300px; }
         }
     </style>
 </head>
@@ -168,42 +183,62 @@
 </header>
 
 <main class="container">
-    <div class="main-card">
-        <div class="profile-photo">
-            <img src="ersun_foto.jpeg" alt="Ersun Baysungur">
-        </div>
-
-        <div class="content-area">
-            <div class="info">
-                <span class="tag">Gayrimenkul Danışmanı</span>
-                <h2>Ersun Baysungur</h2>
-                <p class="description">
-                    Müşteri memnuniyetini ve uzun vadeli güven ilişkilerini merkeze alan 
-                    profesyonel çözümler sunuyoruz.
-                </p>
-
-                <div class="contact-row">
+    <div class="team-grid">
+        
+        <div class="agent-card">
+            <div class="profile-photo">
+                <img src="ersun_foto.jpeg" alt="Ersun Baysungur">
+            </div>
+            <div class="content-area">
+                <div class="info">
+                    <span class="tag">Gayrimenkul Danışmanı</span>
+                    <h2>Ersun Baysungur</h2>
+                    <p class="description">
+                        Müşteri memnuniyetini ve uzun vadeli güven ilişkilerini merkeze alan profesyonel çözümler.
+                    </p>
                     <div class="pill">
                         <label>Telefon</label>
                         <span>0552 532 84 00</span>
                     </div>
-                    <div class="pill">
-                        <label>Lokasyon</label>
-                        <span>Çankaya / Ankara</span>
-                    </div>
-                </div>
-
-                <div class="map-wrapper">
-                    <iframe
-                        width="100%"
-                        height="100%"
-                        frameborder="0"
-                        scrolling="no"
-                        src="https://maps.google.com/maps?q=Alacaatlı%20Mah.%20Kanuni%20Sultan%20Blv.%20No:%20160%20D:50%20Tona%20Rezidans&t=&z=15&ie=UTF8&iwloc=&output=embed">
-                    </iframe>
                 </div>
             </div>
         </div>
+
+        <div class="agent-card">
+            <div class="profile-photo">
+                <img src="bahar_foto.jpeg" alt="Bahar">
+            </div>
+            <div class="content-area">
+                <div class="info">
+                    <span class="tag">Gayrimenkul Danışmanı</span>
+                    <h2>Bahar</h2>
+                    <p class="description">
+                        Yenilikçi bakış açısı ve pazar hakimiyeti ile gayrimenkul hedeflerinize ulaşmanızı sağlıyoruz.
+                    </p>
+                    <div class="pill">
+                        <label>Telefon</label>
+                        <span>[Bahar Telefon Numarası]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="office-info">
+            <div class="pill" style="margin-bottom:0; flex: 0 0 250px;">
+                <label>Lokasyon</label>
+                <span>Çankaya / Ankara</span>
+            </div>
+            <div class="map-wrapper">
+                <iframe
+                    width="100%"
+                    height="100%"
+                    frameborder="0"
+                    scrolling="no"
+                    src="https://maps.google.com/maps?q=Alacaatlı%20Mah.%20Kanuni%20Sultan%20Blv.%20No:%20160%20D:50%20Tona%20Rezidans&t=&z=15&ie=UTF8&iwloc=&output=embed">
+                </iframe>
+            </div>
+        </div>
+
     </div>
 </main>
 
@@ -212,8 +247,8 @@
 </a>
 
 <footer>
-    © 2026 Home Story Gayrimenkul | Ersun Baysungur
+    © 2026 Home Story Gayrimenkul | Ersun Baysungur & Bahar
 </footer>
- 
+
 </body>
 </html>
