@@ -67,7 +67,7 @@
             width: 100%;
         }
 
-        /* PORTFOLIO GRID - 2 CELLS */
+        /* PORTFOLIO GRID */
         .portfolio-grid-custom {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -107,12 +107,7 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
 
-        .room-cell-info h3 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 1.8rem; 
-        }
-
-        /* HIZMETLERIMIZ SECTION - FULL FIT */
+        /* SERVICES SECTION */
         .services-container {
             margin-top: 2.5rem;
             width: 100%;
@@ -137,7 +132,7 @@
 
         .services-image-box img { width: 100%; height: auto; display: block; }
 
-        /* MAIN CONTAINER & TEAM GRID */
+        /* TEAM GRID & CARDS */
         .container {
             max-width: 1200px;
             margin: auto;
@@ -183,6 +178,30 @@
 
         .content-area { padding: 0 30px 30px 30px; text-align: center; }
 
+        .info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tag {
+            display: block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        /* FIXED: Added margin to create gap between text and pill */
+        .description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #475569;
+            margin-bottom: 2rem; 
+        }
+
         .pill {
             background: var(--inner-pill);
             padding: 12px 18px;
@@ -192,7 +211,6 @@
             color: inherit;
             display: block;
             transition: 0.3s;
-
         }
         
         .pill:hover { background: var(--white); border-color: var(--accent); }
@@ -200,6 +218,7 @@
         .pill label { display: block; font-size: 0.6rem; text-transform: uppercase; color: var(--accent); font-weight: 700; cursor: pointer; }
         .pill span { font-size: 0.9rem; font-weight: 600; cursor: pointer; }
 
+        /* OFFICE SECTION */
         .office-section-wrapper { grid-column: span 2; width: 100%; margin-top: 1rem; }
         .office-info {
             background: var(--glass-bg);
@@ -251,13 +270,11 @@
         </div>
         
         <div class="room-cell-info">
-            
             <a href="https://www.sahibinden.com/ilan/emlak-konut-satilik-sinpas-altinoran-panorama-evleri-masrafsiz,bos-daire-1294460257/detay" 
                target="_blank" class="pill">
                 <label>Satılık Konut</label>
                 <span>Sinpaş Altınoran Panorama Evleri <b> 🏠</b></span>
             </a>
-            
         </div>
     </div>
 
@@ -272,6 +289,7 @@
 <main class="container">
     <div class="section-label" style="margin-bottom: 2rem;">Ekibimiz</div>
     <div class="team-grid">
+        
         <div class="agent-card">
             <div class="profile-photo"><img src="ersun_foto.jpeg" alt="Ersun Baysungur"></div>
             <div class="content-area">
@@ -291,8 +309,8 @@
                     <span class="tag">Gayrimenkul Danışmanı</span>
                     <h2>Bahar Gören</h2>
                     <p class="description">Sizin için sadece bir aracı değil, yol arkadaşıyız.</p>
-                    <div class="pill"><label>Telefon</label><span>0532 241 83 22</span></div>
                 </div>
+                <div class="pill"><label>Telefon</label><span>0532 241 83 22</span></div>
             </div>
         </div>
 
