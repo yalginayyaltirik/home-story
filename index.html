@@ -1,43 +1,254 @@
-/* Updated CSS rules to remove margins */
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Home Story Gayrimenkul | Ekibimiz</title>
 
-.team-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0; /* Removed the gap between cards to make them touch */
-}
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
-.agent-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    border-radius: 0; /* Setting to 0 so they join perfectly, or keep 30px for individual cards */
-    display: flex;
-    flex-direction: column;
-    border: 1px solid var(--glass-border);
-    overflow: hidden;
-}
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #c2a35d;
+            --white: #ffffff;
+            --whatsapp: #25d366;
+            --glass-bg: rgba(255, 255, 255, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.5);
+            --inner-pill: rgba(255, 255, 255, 0.4);
+        }
 
-.profile-photo { 
-    width: 100%;
-    height: 450px; /* Adjusted height to fill the frame better */
-    padding: 0;    /* REMOVED PADDING: Photo now touches the edges */
-    margin: 0;     /* REMOVED MARGIN */
-    background: #d1d5db; 
-    display: flex;
-    align-items: flex-end; 
-    justify-content: center;
-}
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
-.profile-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Photo now stretches to fill the left/right edges */
-    object-position: top center;
-    border-radius: 0; /* Removed border radius so it fits the card corner exactly */
-}
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
+                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1920') no-repeat center center fixed;
+            background-size: cover;
+        }
 
-/* Add a border radius only to the very corners of the team-grid container if desired */
-.team-grid {
-    border-radius: 30px;
-    overflow: hidden;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-}
+        header {
+            padding: 3rem 1rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .logo-capsule {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px) saturate(180%);
+            -webkit-backdrop-filter: blur(15px) saturate(180%);
+            padding: 0.8rem 2.5rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .logo { height: 60px; border-radius: 8px; }
+        .company h1 { font-family: 'Playfair Display', serif; font-size: 1.5rem; line-height: 1; }
+        .company p { font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; color: #64748b; font-weight: 600; }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 2rem;
+        }
+
+        /* TEAM GRID SYSTEM */
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .agent-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px) saturate(160%);
+            -webkit-backdrop-filter: blur(25px) saturate(160%);
+            border-radius: 40px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .agent-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .profile-photo { 
+            width: 100%;
+            height: 350px;
+            padding: 20px;
+        }
+        
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .content-area {
+            padding: 0 30px 30px 30px;
+            text-align: center;
+        }
+
+        .info h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 5px; }
+        .info .tag { color: var(--accent); font-weight: 600; font-size: 0.8rem; margin-bottom: 12px; display: block; text-transform: uppercase; }
+        .info .description { font-size: 0.95rem; color: #334155; margin-bottom: 20px; line-height: 1.5; min-height: 3em; }
+
+        .pill {
+            background: var(--inner-pill);
+            padding: 10px 15px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.3);
+            margin-bottom: 15px;
+        }
+
+        .pill label { display: block; font-size: 0.55rem; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 2px; }
+        .pill span { font-size: 0.8rem; font-weight: 600; }
+
+        /* SHARED CONTACT/MAP BOX */
+        .office-info {
+            grid-column: span 2;
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px);
+            border-radius: 30px;
+            padding: 20px;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .map-wrapper {
+            flex: 1;
+            height: 150px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--whatsapp);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            transition: 0.3s ease;
+            z-index: 1000;
+        }
+
+        .whatsapp-float:hover { transform: translateY(-5px); }
+
+        footer { text-align: center; padding: 2rem; color: rgba(255,255,255,0.4); font-size: 0.75rem; }
+
+        @media (max-width: 900px) {
+            .team-grid { grid-template-columns: 1fr; }
+            .office-info { grid-column: span 1; flex-direction: column; }
+            .profile-photo { height: 300px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo-capsule">
+        <img src="logo.jpeg" alt="Logo" class="logo">
+        <div class="company">
+            <h1>Home Story</h1>
+            <p>Gayrimenkul Danışmanlığı</p>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <div class="team-grid">
+        
+        <div class="agent-card">
+            <div class="profile-photo">
+                <img src="ersun_foto.jpeg" alt="Ersun Baysungur">
+            </div>
+            <div class="content-area">
+                <div class="info">
+                    <span class="tag">Gayrimenkul Danışmanı</span>
+                    <h2>Ersun Baysungur</h2>
+                    <p class="description">
+                        Emlak dünyasına taze bir soluk ve modern bir vizyon getiriyoruz. Dinamik ekibimizle, beklentilerinize özel, yenilikçi çözümler üretiyoruz.
+                    </p>
+                    <div class="pill">
+                        <label>Telefon</label>
+                        <span>0552 532 84 00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="agent-card">
+            <div class="profile-photo">
+                <img src="bahar_foto.png" alt="Bahar">
+            </div>
+            <div class="content-area">
+                <div class="info">
+                    <span class="tag">Gayrimenkul Danışmanı</span>
+                    <h2>Bahar Gören</h2>
+                    <p class="description">
+                        Heyecanımızı uzmanlığımıza katıyor, her adımda güvenle büyüyoruz. Sizin için sadece bir aracı değil, yol arkadaşıyız.
+                    </p>
+                    <div class="pill">
+                        <label>Telefon</label>
+                        <span>0312 504 74 04</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="office-info">
+            <div class="pill" style="margin-bottom:0; flex: 0 0 250px;">
+                <label>Lokasyon</label>
+                <span>Alacaatlı Mah. Kanuni Sultan Süleyman Blv. Tona Rezidans No: 160 D:50 Çankaya / Ankara</span>
+            </div>
+            <div class="map-wrapper">
+                <iframe
+                    width="100%"
+                    height="100%"
+                    frameborder="0"
+                    scrolling="no"
+                    src="https://maps.google.com/maps?q=Alacaatlı%20Mah.%20Kanuni%20Sultan%20Blv.%20No:%20160%20D:50%20Tona%20Rezidans&t=&z=15&ie=UTF8&iwloc=&output=embed">
+                </iframe>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<a href="https://wa.me/905525328400" class="whatsapp-float" target="_blank">
+    <span>WhatsApp’tan Yazın</span>
+</a>
+
+<footer>
+    © 2026 Home Story Gayrimenkul | Ersun Baysungur & Bahar
+</footer>
+
+</body>
+</html>
